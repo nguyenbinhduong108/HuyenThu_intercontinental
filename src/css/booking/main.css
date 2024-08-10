@@ -1,0 +1,457 @@
+/* RESET */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+html:not(.keyboard-navigation) :focus {
+    outline: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+input::-ms-reveal {
+    display: none;
+}
+
+legend {
+    display: none;
+}
+
+@font-face {
+    font-family: "ITC New Baskerville";
+    src: url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/ITC New Baskerville.woff2") format("woff2"), url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/ITC New Baskerville.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gill Sans";
+    src: url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-light.woff2") format("woff2"), url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gill Sans";
+    src: url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-regular.woff2") format("woff2"), url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gill Sans";
+    src: url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-italic.woff2") format("woff2"), url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-italic.woff") format("woff");
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Gill Sans";
+    src: url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-medium.woff2") format("woff2"), url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Gill Sans";
+    src: url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-bold.woff2") format("woff2"), url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+html,
+body,
+input,
+textarea,
+button {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smoothing: antialiased;
+}
+
+input[type=submit],
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button,
+input,
+textarea {
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+
+    input[type=text],
+    textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+}
+
+button,
+input:not([type=checkbox]):not([type=radio]),
+textarea {
+    border-radius: 0;
+    border: none;
+    background: none;
+}
+
+a,
+input[type=submit],
+button,
+.button {
+    cursor: pointer;
+    transition: color 100ms, background-color 100ms, border-color 100ms;
+}
+
+svg:not(:root) {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    fill: none;
+    stroke: none;
+}
+
+svg.svg-collection {
+    display: none;
+}
+
+.button,
+input[type=submit].button {
+    position: relative;
+    display: inline-block;
+    height: 57px;
+    margin: 0;
+    padding: 0 54px;
+    overflow: visible;
+    color: #44443C;
+    background: #D3B5A3;
+    font: 14px/57px "ITC New Baskerville", serif;
+    text-transform: uppercase;
+    -moz-text-align-last: auto;
+    text-align-last: auto;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    transition: 350ms ease-in-out;
+}
+
+.button:hover,
+.button.active,
+input[type=submit].button:hover,
+input[type=submit].button.active {
+    color: #fff;
+    background: #44443C;
+}
+
+.button.button-grey,
+input[type=submit].button.button-grey {
+    background: #e7e7e7;
+}
+
+.button.button-grey:hover,
+input[type=submit].button.button-grey:hover {
+    color: #fff;
+    background: #44443C;
+}
+
+.button.button-transparent,
+input[type=submit].button.button-transparent {
+    background: rgba(68, 68, 60, 0.25);
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.button.button-transparent:hover,
+input[type=submit].button.button-transparent:hover {
+    background: #44443C;
+    border: thin solid #44443C;
+    color: #fff;
+}
+
+@media only screen and (max-width: 1023px) {
+
+    .button,
+    input[type=submit].button {
+        height: 44px;
+        line-height: 44px;
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+
+    .button,
+    input[type=submit].button {
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .button.button-transparent,
+    input[type=submit].button.button-transparent {
+        background: #44443C;
+    }
+}
+
+select {
+    border-radius: 0;
+    background: none;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    display: inline-block;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 16px;
+    border: thin solid #DDDFDB;
+    font: 16px/38px "Gill Sans", Helvetica, Arial, sans-serif;
+    text-align: left;
+    background: #fff;
+    transition: color 350ms ease-in-out, background-color 350ms ease-in-out, border-color 350ms ease-in-out;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+html:not(.no-js) .fade-on-scroll {
+    transform: translate(0, 50px);
+    opacity: 0;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 750ms;
+}
+
+html:not(.no-js) .fade-on-scroll.from-left {
+    transform: translate(-50px, 0);
+}
+
+html:not(.no-js) .fade-on-scroll.from-right {
+    transform: translate(50px, 0);
+}
+
+html:not(.no-js) .fade-on-scroll.visible {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+    overflow-y: scroll;
+    height: 100%;
+    background: #fff;
+    color: #44443C;
+}
+
+body {
+    position: relative;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html,
+body,
+input,
+textarea,
+button {
+    font-family: "ITC New Baskerville", serif;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+@media only screen and (max-width: 767px) {
+
+    html,
+    body,
+    input,
+    textarea,
+    button {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+}
+
+a {
+    color: #44443C;
+}
+
+a:hover {
+    color: #D3B5A3;
+}
+
+@media only screen and (min-width: 1024px) {
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #F7F6F6;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #D3B5A3;
+    }
+
+    ::-moz-selection {
+        background: rgba(211, 181, 163, 0.8);
+        color: #44443C;
+    }
+
+    ::selection {
+        background: rgba(211, 181, 163, 0.8);
+        color: #44443C;
+    }
+}

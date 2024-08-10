@@ -11,6 +11,7 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "lightbox": "^0.5.0",
     "lozad": "^1.16.0",
     "pinia": "^2.1.7",
