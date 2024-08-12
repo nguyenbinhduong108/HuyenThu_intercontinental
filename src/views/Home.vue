@@ -19,7 +19,9 @@
         class="dark-logo"
       />
     </a>
-    <button class="booking-trigger button" @click="handleShowBooking">Đặt phòng ngay</button>
+    <button class="booking-trigger button" @click="handleShowBooking">
+      Đặt phòng ngay
+    </button>
     <div
       id="mobile-navigation"
       class="scrolling-wrapper"
@@ -223,7 +225,9 @@
         </figure>
       </div>
     </div>
-    <div class="booking-trigger button" @click="handleShowBooking">Đặt phòng ngay</div>
+    <div class="booking-trigger button" @click="handleShowBooking">
+      Đặt phòng ngay
+    </div>
   </div>
   <article id="booking" tabindex="-1">
     <div class="center-column">
@@ -789,7 +793,13 @@
             <div class="select-icon"></div>
           </div>
 
-          <button @click="handleBooking" class="button" style="width: 100%; margin-top: 20px">Kiểm tra tình trạng phòng</button>
+          <button
+            @click="handleBooking"
+            class="button"
+            style="width: 100%; margin-top: 20px"
+          >
+            Kiểm tra tình trạng phòng
+          </button>
         </fieldset>
       </form>
     </div>
@@ -1955,6 +1965,612 @@
     </div>
   </article>
 
+  //
+  <section
+    id="content"
+    class="fade-on-scroll visible"
+    role="main"
+    tabindex="-1"
+  >
+    <div id="main-content" class="center-column has-thumb">
+      <div class="home-wrapper">
+        <div class="home-thumbnail">
+          <picture>
+            <source
+              type="image/webp"
+              media="(max-width: 420px)"
+              srcset="
+                //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/400x200/fit/80/728fc6b645c8bda4661cc993ed4faef0.webp
+              "
+            />
+            <source
+              type="image/webp"
+              media="(max-width: 767px)"
+              srcset="
+                //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/750x400/fit/80/ff62097d346868ecbbacbd6e62601118.webp
+              "
+            />
+            <source
+              type="image/webp"
+              media="(max-width: 1280px)"
+              srcset="
+                //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/700x1100/fit/80/c718db9cbf4f4e65af575ab7482c0852.webp
+              "
+            />
+            <source
+              type="image/webp"
+              srcset="
+                //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/800x1200/fit/80/96f79d0c12e19b211075023beb706b01.webp
+              "
+            />
+            <source
+              type="image/jpeg"
+              media="(max-width: 420px)"
+              srcset="
+                //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/400x200/fit/80/bb0c65abed9b5f90bc5172be7b47e818.jpg
+              "
+            />
+            <source
+              type="image/jpeg"
+              media="(max-width: 767px)"
+              srcset="
+                //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/750x400/fit/80/adf26866faa7b03ef230e040a3555f5f.jpg
+              "
+            />
+            <source
+              type="image/jpeg"
+              media="(max-width: 1280px)"
+              srcset="
+                //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/700x1100/fit/80/f9ae149104f21d66b5c5ae1086a5c08f.jpg
+              "
+            />
+            <source
+              type="image/jpeg"
+              srcset="
+                //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/800x1200/fit/80/c76804088e07eec0e36b86779534a340.jpg
+              "
+            />
+            <img
+              class="object-fit lazy-load"
+              data-src="https://d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/imagepool/63e37821208ab.JPG"
+              alt="InterContinental Hanoi Westlake Main-content Section Image 520"
+              src="https://d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/imagepool/63e37821208ab.JPG"
+              data-loaded="true"
+            />
+          </picture>
+        </div>
+        <div class="home-content-wrapper">
+          <div class="page-content">
+            <h1>KHÁCH SẠN ĐỘC ĐÁO NỔI TRÊN MẶT HỒ</h1>
+            <p style="text-align: justify">
+              Tọa lạc trên mặt nước hồ Tây yên bình và gần di tích chùa Kim Liên
+              với lịch sử hơn 800 năm tuổi, InterContinental Hanoi Westlake hứa
+              hẹn sẽ mang lại một trải nghiệm nghỉ dưỡng vô cùng bình yên giữa
+              lòng thành phố sôi động, tấp nập.&nbsp;<br />
+              InterContinental Hanoi Westlake là nơi các du khách sẽ được tận
+              hưởng không gian nghỉ dưỡng sang trọng cùng những đặc quyền độc
+              đáo chỉ dành riêng cho quý khách tại Club InterContinental. Cùng
+              thưởng thức ẩm thực thượng hạng và ghi lại những khoảnh khắc hoàng
+              hôn tuyệt đẹp tại quán bar nổi hoàn toàn trên mặt nước, duy nhất
+              tại Hà Nội - Sunset Bar. Sở hữu vị trí lý tưởng, chỉ cách trung
+              tâm thành phố vài phút, khách sạn InterContinental Hanoi Westlake
+              vẫn giữ được vẻ bình yên hiếm có giữa nhịp sống nhộn nhịp hối hả
+              của đô thị.&nbsp;
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="acm-block section-blocks fade-on-scroll visible">
+      <div class="center-column main-heading-wrapper">
+        <div class="page-content">
+          <h2 class="h1-like"><span>Ẩm thực</span></h2>
+        </div>
+        <div class="section-block-list">
+          <article class="item-block">
+            <div class="thumbnail-wrap">
+              <div
+                class="thumbnail lazy-load"
+                data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e380bb1b8b6.jpg/620x415/fit;c:895,1283,5503,4366/80/07ecdbd20d1af5f1e10a8fe9204d2c90.jpg"
+                data-loaded="true"
+                style="
+                  background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e380bb1b8b6.jpg/620x415/fit;c:895,1283,5503,4366/80/07ecdbd20d1af5f1e10a8fe9204d2c90.jpg');
+                "
+              ></div>
+            </div>
+            <div class="section-block-content page-content">
+              <h3 class="sb-title">Sunset Bar</h3>
+              <p class="sb-descr">
+                Sunset Bar - thiên đường của cocktail. Tại đây, quý khách sẽ tìm
+                thấy một trải nghiệm độc đáo, khác biệt hoàn toàn với bất kì nơi
+                đâu tại Hà Nội. Nối giữa 03 đảo hồ và sở hữu cảnh quan thơ mộng
+                của hồ Tây, Sunset Bar là một điểm đến lý tưởng cho những buổi
+                hẹn hò lãng mạn - tản bộ trên cầu và thưởng thức những ly
+                cocktail thượng hạng hay dịch vụ trà chiều đẳng cấp sẽ là những
+                trải nghiệm khó quên.
+              </p>
+              <a href="/vn/dining/sunset-bar" class="view-link text-link">
+                Tìm hiểu thêm
+              </a>
+            </div>
+          </article>
+          <article class="item-block">
+            <div class="thumbnail-wrap">
+              <div
+                class="thumbnail lazy-load"
+                data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e462e498a65.jpg/620x415/fit;c:440,875,5417,4205/80/c073dd0cfd27ea62e15cfad5e7bcc155.jpg"
+                data-loaded="true"
+                style="
+                  background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e462e498a65.jpg/620x415/fit;c:440,875,5417,4205/80/c073dd0cfd27ea62e15cfad5e7bcc155.jpg');
+                "
+              ></div>
+            </div>
+            <div class="section-block-content page-content">
+              <h3 class="sb-title">Nhà hàng Café du Lac</h3>
+              <p class="sb-descr">
+                Lấy cảm hứng từ văn hoá Pháp, nhà hàng Café du Lac mang hơi thở
+                của một nhà hàng Pháp giữa lòng thủ đô Hà Nội. Từ thiết kế cổ
+                điển trong từng chi tiết kiến trúc đến vị trí lý tưởng trên mặt
+                nước hồ Tây yên bình, InterContinental Hanoi Westlake luôn mong
+                muốn dành tặng quý khách hàng một trải nghiệm đẳng cấp nhưng vô
+                cùng thân thuộc và gần gũi.
+              </p>
+              <a href="/vn/dining/cafe-du-lac" class="view-link text-link">
+                Tìm hiểu thêm
+              </a>
+            </div>
+          </article>
+          <article class="item-block">
+            <div class="thumbnail-wrap">
+              <div
+                class="thumbnail lazy-load"
+                data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e613e1798f5.jpg/620x415/fit/80/f5e909fdb54d3c9558b3a25adc2d9f48.jpg"
+                data-loaded="true"
+                style="
+                  background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e613e1798f5.jpg/620x415/fit/80/f5e909fdb54d3c9558b3a25adc2d9f48.jpg');
+                "
+              ></div>
+            </div>
+            <div class="section-block-content page-content">
+              <h3 class="sb-title">Nhà hàng Milan</h3>
+              <p class="sb-descr">
+                Nhà hàng Milan sẽ đánh thức mọi giác quan của quý khách, mang
+                đến những hương vị ấn tượng nhất của ẩm thực Ý truyền thống.
+                Được đặt tại tầng hai của tòa nhà chính khách sạn, nhà hàng là
+                một sự pha trộn giữa thiết kế châu Âu hiện đại và Á Đông độc
+                đáo, một bức tranh với những gam màu rực rỡ.
+              </p>
+              <a href="/vn/dining/milan-restaurant" class="view-link text-link">
+                Tìm hiểu thêm
+              </a>
+            </div>
+          </article>
+          <article class="item-block">
+            <div class="thumbnail-wrap">
+              <div
+                class="thumbnail lazy-load"
+                data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e60df068fe7.jpg/620x415/fit/80/3dba5a1b176a7c69e3d794ae8af70728.jpg"
+                data-loaded="true"
+                style="
+                  background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e60df068fe7.jpg/620x415/fit/80/3dba5a1b176a7c69e3d794ae8af70728.jpg');
+                "
+              ></div>
+            </div>
+            <div class="section-block-content page-content">
+              <h3 class="sb-title">Nhà hàng Sài Gòn</h3>
+              <p class="sb-descr">
+                Với thiết kế thuần Việt, gian bếp bằng kính độc đáo với tầm nhìn
+                toàn cảnh nhà hàng sẽ tạo cơ hội cho quý khách có thể khiến quý
+                khách quan sát được hết các màn biểu diễn tài tình của các đầu
+                bếp ưu tú, nhà hàng Saigon mang tới những món ăn truyền thống
+                Việt Nam đa dạng, phong phú và đậm đà bản sắc.
+              </p>
+              <a
+                href="/vn/dining/saigon-restaurant"
+                class="view-link text-link"
+              >
+                Tìm hiểu thêm
+              </a>
+            </div>
+          </article>
+          <article class="item-block">
+            <div class="thumbnail-wrap">
+              <div
+                class="thumbnail lazy-load"
+                data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e6142f685e7.jpg/620x415/fit/80/cddd05b2a6c0301fb2ecea0652cbf614.jpg"
+                data-loaded="true"
+                style="
+                  background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e6142f685e7.jpg/620x415/fit/80/cddd05b2a6c0301fb2ecea0652cbf614.jpg');
+                "
+              ></div>
+            </div>
+            <div class="section-block-content page-content">
+              <h3 class="sb-title">Diplomat Lounge</h3>
+              <p class="sb-descr">
+                Diplomat Lounge là một sự lựa chọn hoàn hảo cho những buổi trà
+                chiều cùng bạn bè, đồng nghiệp và người thân. Dành thời gian thư
+                giãn và thưởng thức những tách trà thượng hạng, cà phê, cùng với
+                những món ăn nhẹ, hay kết thúc một ngày dài với ly rượu vang đỏ
+                hoặc cognac vào buổi tối.
+              </p>
+              <a href="/vn/dining/diplomat-lounge" class="view-link text-link">
+                Tìm hiểu thêm
+              </a>
+            </div>
+          </article>
+          <article class="item-block">
+            <div class="thumbnail-wrap">
+              <div
+                class="thumbnail lazy-load"
+                data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e9b9d1ba6c6.jpg/620x415/fit/80/43c61744435e0d724134b1fbc1dfc096.jpg"
+                data-loaded="true"
+                style="
+                  background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e9b9d1ba6c6.jpg/620x415/fit/80/43c61744435e0d724134b1fbc1dfc096.jpg');
+                "
+              ></div>
+            </div>
+            <div class="section-block-content page-content">
+              <h3 class="sb-title">Penfolds Lounge</h3>
+              <p class="sb-descr">
+                Đến với InterContinental Hanoi Westlake, mọi mong muốn của quý
+                khách hàng đều được đáp ứng. Trong một không gian ấm cúng, sang
+                trọng, tại Penfolds Lounge, cùng tận hưởng bữa tối thân mật với
+                20 người, phù hợp cho những bữa tiệc cá nhân hay những buổi gặp
+                gỡ trong công việc.
+              </p>
+              <a href="/vn/dining/penfolds-lounge" class="view-link text-link">
+                Tìm hiểu thêm
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="acm-block featured-promos fade-on-scroll visible">
+      <div class="center-column main-heading-wrapper">
+        <div class="acm-block-headings page-content">
+          <h2 class="h1-like"><span>Ưu đãi Đặc biệt</span></h2>
+        </div>
+        <div class="featured-promos-list">
+          <div class="slideshow swiper-container-horizontal">
+            <div
+              class="slideshow-wrapper swiper-wrapper"
+              tabindex="-1"
+              style="
+                transition-duration: 0ms;
+                transform: translate3d(-2308.33px, 0px, 0px);
+              "
+            >
+              <article
+                class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                data-swiper-slide-index="1"
+                style="width: 436.667px; margin-right: 25px"
+                aria-hidden="true"
+              >
+                <div class="thumbnail-wrap">
+                  <div
+                    class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab3c6f200ea.jpeg/800x1000/fit/80/5f9d3ccecfc1a54f32807415c3e61242.jpg"
+                  ></div>
+                </div>
+                <div class="featured-promo-content page-content">
+                  <h3 class="fp-title">
+                    ‘Meet the Masters’ Workshop: Chìa khóa Hôn nhân Hạnh phúc
+                  </h3>
+                  <p class="fp-descr">
+                    Đắm chìm trong những câu chuyện về mùi hương và sắc màu thần
+                    kỳ chúng mang lại trong đời sống hôn nhân, hay cùng nhau
+                    sáng tạo hương thơm đặc trưng cho riêng hai người. Bạn đã
+                    sẵn sàng mang giấc mơ về một câu chuyện tình yêu trong cổ
+                    tích thành hiện thực?
+                  </p>
+                  <a
+                    href="https://hanoi.intercontinental.com/vn/special-offers/meet-the-masters-workshop"
+                    class="view-link text-link"
+                    target="_blank"
+                    tabindex="-1"
+                    >Tìm hiểu thêm</a
+                  >
+                </div>
+              </article>
+              <article
+                class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                data-swiper-slide-index="2"
+                style="width: 436.667px; margin-right: 25px"
+                aria-hidden="true"
+              >
+                <div class="thumbnail-wrap">
+                  <div
+                    class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab39d44f3c3.jpeg/800x1000/fit/80/9624fe89be84ac73254555ef9e44aacf.jpg"
+                  ></div>
+                </div>
+                <div class="featured-promo-content page-content">
+                  <h3 class="fp-title">Thực đơn đặc biệt Tháng Tám - Cốm</h3>
+                  <p class="fp-descr">
+                    Từ Chả cốm thơm lừng ăn cùng bún tươi và nước chấm chua ngọt
+                    đến Tôm Nha Trang tẩm Cốm chiên giòn độc đáo, bạn sẽ không
+                    muốn bỏ lỡ tinh hoa ẩm thực ngày thu trứ danh của người Hà
+                    Nội!
+                  </p>
+                  <a
+                    href="https://hanoi.intercontinental.com/vn/special-offers/green-rice-specialities"
+                    class="view-link text-link"
+                    target="_blank"
+                    tabindex="-1"
+                    >Tìm hiểu thêm</a
+                  >
+                </div>
+              </article>
+              <article
+                class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
+                data-swiper-slide-index="3"
+                style="width: 436.667px; margin-right: 25px"
+                aria-hidden="true"
+              >
+                <div class="thumbnail-wrap">
+                  <div
+                    class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64523763861b2.jpg/800x1000/fit;c:409,0,1149,1281/80/c3ec9256220216b6ad918d415a22bed5.jpg"
+                  ></div>
+                </div>
+                <div class="featured-promo-content page-content">
+                  <h3 class="fp-title">Gói nghỉ dưỡng Je T’aime</h3>
+                  <p class="fp-descr">
+                    Bạn đang tìm kiếm một kỳ nghỉ hoàn hảo dành tặng “nửa yêu
+                    thương” của mình? Đừng bỏ lỡ gói nghỉ dưỡng Je T'aime tại
+                    InterContinental Hanoi Westlake!
+                  </p>
+                  <a
+                    href="https://hanoi.intercontinental.com/vn/special-offers/jetaimepackage"
+                    class="view-link text-link"
+                    target="_blank"
+                    tabindex="-1"
+                    >Tìm hiểu thêm</a
+                  >
+                </div>
+              </article>
+              <article
+                class="item-slide swiper-slide"
+                data-swiper-slide-index="0"
+                style="width: 436.667px; margin-right: 25px"
+                aria-hidden="true"
+              >
+                <div class="thumbnail-wrap">
+                  <div
+                    class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/6682616d5f5a2.jpg/800x1000/fit;c:636,0,1794,2000/80/d9c35b0107370171cef696cadedaea9b.jpg"
+                  ></div>
+                </div>
+                <div class="featured-promo-content page-content">
+                  <h3 class="fp-title">
+                    Bộ sưu tập Bánh Trung Thu 2024 - Thiên Nguyệt Hoà Âm
+                  </h3>
+                  <p class="fp-descr">
+                    Thiên Nguyệt Hòa Âm - Thức quà truyền thống mang hình ảnh
+                    hòa quyện giữa những nét đẹp thiên nhiên, ẩn chứa bao giá
+                    trị văn hóa sâu sắc và lời chúc ý nghĩa cho một mùa Trung
+                    thu vẹn tròn.
+                  </p>
+                  <a
+                    href="https://hanoi.intercontinental.com/vn/special-offers/mooncake-collection-2024"
+                    class="view-link text-link"
+                    target="_blank"
+                    tabindex="-1"
+                    >Tìm hiểu thêm</a
+                  >
+                </div>
+              </article>
+              <article
+                class="item-slide swiper-slide swiper-slide-prev"
+                data-swiper-slide-index="1"
+                style="width: 436.667px; margin-right: 25px"
+                aria-hidden="true"
+              >
+                <div class="thumbnail-wrap">
+                  <div
+                    class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab3c6f200ea.jpeg/800x1000/fit/80/5f9d3ccecfc1a54f32807415c3e61242.jpg"
+                  ></div>
+                </div>
+                <div class="featured-promo-content page-content">
+                  <h3 class="fp-title">
+                    ‘Meet the Masters’ Workshop: Chìa khóa Hôn nhân Hạnh phúc
+                  </h3>
+                  <p class="fp-descr">
+                    Đắm chìm trong những câu chuyện về mùi hương và sắc màu thần
+                    kỳ chúng mang lại trong đời sống hôn nhân, hay cùng nhau
+                    sáng tạo hương thơm đặc trưng cho riêng hai người. Bạn đã
+                    sẵn sàng mang giấc mơ về một câu chuyện tình yêu trong cổ
+                    tích thành hiện thực?
+                  </p>
+                  <a
+                    href="https://hanoi.intercontinental.com/vn/special-offers/meet-the-masters-workshop"
+                    class="view-link text-link"
+                    target="_blank"
+                    tabindex="-1"
+                    >Tìm hiểu thêm</a
+                  >
+                </div>
+              </article>
+              <article
+                class="item-slide swiper-slide swiper-slide-active"
+                data-swiper-slide-index="2"
+                style="width: 436.667px; margin-right: 25px"
+                aria-hidden="false"
+              >
+                <div class="thumbnail-wrap">
+                  <div
+                    class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab39d44f3c3.jpeg/800x1000/fit/80/9624fe89be84ac73254555ef9e44aacf.jpg"
+                  ></div>
+                </div>
+                <div class="featured-promo-content page-content">
+                  <h3 class="fp-title">Thực đơn đặc biệt Tháng Tám - Cốm</h3>
+                  <p class="fp-descr">
+                    Từ Chả cốm thơm lừng ăn cùng bún tươi và nước chấm chua ngọt
+                    đến Tôm Nha Trang tẩm Cốm chiên giòn độc đáo, bạn sẽ không
+                    muốn bỏ lỡ tinh hoa ẩm thực ngày thu trứ danh của người Hà
+                    Nội!
+                  </p>
+                  <a
+                    href="https://hanoi.intercontinental.com/vn/special-offers/green-rice-specialities"
+                    class="view-link text-link"
+                    target="_blank"
+                    >Tìm hiểu thêm</a
+                  >
+                </div>
+              </article>
+              <article
+                class="item-slide swiper-slide swiper-slide-next"
+                data-swiper-slide-index="3"
+                style="width: 436.667px; margin-right: 25px"
+                aria-hidden="true"
+              >
+                <div class="thumbnail-wrap">
+                  <div
+                    class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64523763861b2.jpg/800x1000/fit;c:409,0,1149,1281/80/c3ec9256220216b6ad918d415a22bed5.jpg"
+                    data-loaded="true"
+                    style="
+                      background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64523763861b2.jpg/800x1000/fit;c:409,0,1149,1281/80/c3ec9256220216b6ad918d415a22bed5.jpg');
+                    "
+                  ></div>
+                </div>
+                <div class="featured-promo-content page-content">
+                  <h3 class="fp-title">Gói nghỉ dưỡng Je T’aime</h3>
+                  <p class="fp-descr">
+                    Bạn đang tìm kiếm một kỳ nghỉ hoàn hảo dành tặng “nửa yêu
+                    thương” của mình? Đừng bỏ lỡ gói nghỉ dưỡng Je T'aime tại
+                    InterContinental Hanoi Westlake!
+                  </p>
+                  <a
+                    href="https://hanoi.intercontinental.com/vn/special-offers/jetaimepackage"
+                    class="view-link text-link"
+                    target="_blank"
+                    >Tìm hiểu thêm</a
+                  >
+                </div>
+              </article>
+              <article
+                class="item-slide swiper-slide swiper-slide-duplicate"
+                data-swiper-slide-index="0"
+                style="width: 436.667px; margin-right: 25px"
+                aria-hidden="true"
+              >
+                <div class="thumbnail-wrap">
+                  <div
+                    class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/6682616d5f5a2.jpg/800x1000/fit;c:636,0,1794,2000/80/d9c35b0107370171cef696cadedaea9b.jpg"
+                    data-loaded="true"
+                    style="
+                      background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/6682616d5f5a2.jpg/800x1000/fit;c:636,0,1794,2000/80/d9c35b0107370171cef696cadedaea9b.jpg');
+                    "
+                  ></div>
+                </div>
+                <div class="featured-promo-content page-content">
+                  <h3 class="fp-title">
+                    Bộ sưu tập Bánh Trung Thu 2024 - Thiên Nguyệt Hoà Âm
+                  </h3>
+                  <p class="fp-descr">
+                    Thiên Nguyệt Hòa Âm - Thức quà truyền thống mang hình ảnh
+                    hòa quyện giữa những nét đẹp thiên nhiên, ẩn chứa bao giá
+                    trị văn hóa sâu sắc và lời chúc ý nghĩa cho một mùa Trung
+                    thu vẹn tròn.
+                  </p>
+                  <a
+                    href="https://hanoi.intercontinental.com/vn/special-offers/mooncake-collection-2024"
+                    class="view-link text-link"
+                    target="_blank"
+                    >Tìm hiểu thêm</a
+                  >
+                </div>
+              </article>
+              <article
+                class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                data-swiper-slide-index="1"
+                style="width: 436.667px; margin-right: 25px"
+                aria-hidden="true"
+              >
+                <div class="thumbnail-wrap">
+                  <div
+                    class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab3c6f200ea.jpeg/800x1000/fit/80/5f9d3ccecfc1a54f32807415c3e61242.jpg"
+                    data-loaded="true"
+                    style="
+                      background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab3c6f200ea.jpeg/800x1000/fit/80/5f9d3ccecfc1a54f32807415c3e61242.jpg');
+                    "
+                  ></div>
+                </div>
+                <div class="featured-promo-content page-content">
+                  <h3 class="fp-title">
+                    ‘Meet the Masters’ Workshop: Chìa khóa Hôn nhân Hạnh phúc
+                  </h3>
+                  <p class="fp-descr">
+                    Đắm chìm trong những câu chuyện về mùi hương và sắc màu thần
+                    kỳ chúng mang lại trong đời sống hôn nhân, hay cùng nhau
+                    sáng tạo hương thơm đặc trưng cho riêng hai người. Bạn đã
+                    sẵn sàng mang giấc mơ về một câu chuyện tình yêu trong cổ
+                    tích thành hiện thực?
+                  </p>
+                  <a
+                    href="https://hanoi.intercontinental.com/vn/special-offers/meet-the-masters-workshop"
+                    class="view-link text-link"
+                    target="_blank"
+                    tabindex="-1"
+                    >Tìm hiểu thêm</a
+                  >
+                </div>
+              </article>
+              <article
+                class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                data-swiper-slide-index="2"
+                style="width: 436.667px; margin-right: 25px"
+                aria-hidden="true"
+              >
+                <div class="thumbnail-wrap">
+                  <div
+                    class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab39d44f3c3.jpeg/800x1000/fit/80/9624fe89be84ac73254555ef9e44aacf.jpg"
+                    data-loaded="true"
+                    style="
+                      background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab39d44f3c3.jpeg/800x1000/fit/80/9624fe89be84ac73254555ef9e44aacf.jpg');
+                    "
+                  ></div>
+                </div>
+                <div class="featured-promo-content page-content">
+                  <h3 class="fp-title">Thực đơn đặc biệt Tháng Tám - Cốm</h3>
+                  <p class="fp-descr">
+                    Từ Chả cốm thơm lừng ăn cùng bún tươi và nước chấm chua ngọt
+                    đến Tôm Nha Trang tẩm Cốm chiên giòn độc đáo, bạn sẽ không
+                    muốn bỏ lỡ tinh hoa ẩm thực ngày thu trứ danh của người Hà
+                    Nội!
+                  </p>
+                  <a
+                    href="https://hanoi.intercontinental.com/vn/special-offers/green-rice-specialities"
+                    class="view-link text-link"
+                    target="_blank"
+                    tabindex="-1"
+                    >Tìm hiểu thêm</a
+                  >
+                </div>
+              </article>
+            </div>
+            <span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span>
+          </div>
+        </div>
+        <div class="featured-promos-button-wrapper">
+          <a href="/booking" class="button"> Xem thêm Ưu đãi </a>
+        </div>
+      </div>
+    </section>
+  </section>
+  //
+
   <footer id="footer">
     <div class="center-column">
       <nav id="footer-menu" class="footer-menu">
@@ -2193,28 +2809,30 @@
 </template>
 
 <script setup lang="ts">
-import router from '@/router';
+import router from "@/router";
 
 const handleShowBooking = () => {
-  const showBooking = document.querySelector<HTMLElement>('#booking');
+  const showBooking = document.querySelector<HTMLElement>("#booking");
 
-  if(showBooking && showBooking.style.left != '0%'){
-    showBooking.style.left = '0%';
-  }
-  else if(showBooking && showBooking.style.left == '0%'){
-    showBooking.style.left = '-101%';
-  }
-  else{
+  if (showBooking && showBooking.style.left != "0%") {
+    showBooking.style.left = "0%";
+  } else if (showBooking && showBooking.style.left == "0%") {
+    showBooking.style.left = "-101%";
+  } else {
     throw new Error("Không tìm thấy element");
   }
-}
+};
 
 const handleBooking = () => {
-  router.push({name: 'booking'});
-}
+  router.push({ name: "booking" });
+};
 </script>
 
 <style scoped>
 @import url("../css/home/main.css");
 @import url("../css/home/style.css");
+
+*{
+  font-family: "ITC New Baskerville"
+}
 </style>

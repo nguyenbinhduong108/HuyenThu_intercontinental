@@ -243,7 +243,7 @@ const handleViewDetails = () => {
 }
 
 const handleBackToTop = () => {
-  
+
 }
 </script>
 
@@ -320,6 +320,7 @@ header {
 
         .pointer {
           .underline {
+            font-weight: 600;
             text-decoration: underline;
           }
         }

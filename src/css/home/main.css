@@ -157,41 +157,6 @@ legend {
     font-style: normal;
 }
 
-@font-face {
-    font-family: "Gill Sans";
-    src: url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-light.woff2") format("woff2"), url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-light.woff") format("woff");
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Gill Sans";
-    src: url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-regular.woff2") format("woff2"), url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-regular.woff") format("woff");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Gill Sans";
-    src: url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-italic.woff2") format("woff2"), url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-italic.woff") format("woff");
-    font-weight: 400;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: "Gill Sans";
-    src: url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-medium.woff2") format("woff2"), url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-medium.woff") format("woff");
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Gill Sans";
-    src: url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-bold.woff2") format("woff2"), url("/skins/skin-hanoi/1722921159/assets/desktop/fonts/gillsans-bold.woff") format("woff");
-    font-weight: 700;
-    font-style: normal;
-}
-
 html,
 body,
 input,
@@ -509,7 +474,7 @@ select {
     line-height: 38px;
     padding: 0 16px;
     border: thin solid #DDDFDB;
-    font: 16px/38px "Gill Sans", Helvetica, Arial, sans-serif;
+    font: 16px/38px "ITC New Baskerville", Helvetica, Arial, sans-serif;
     text-align: left;
     background: #fff;
     transition: color 350ms ease-in-out, background-color 350ms ease-in-out, border-color 350ms ease-in-out;
@@ -1620,7 +1585,7 @@ a:hover {
 }
 
 #booking-home .reset {
-    font: 500 14px/1.2 "Gill Sans", Helvetica, Arial, sans-serif;
+    font: 500 14px/1.2 "ITC New Baskerville", Helvetica, Arial, sans-serif;
     display: block;
     color: #44443C;
     position: absolute;
@@ -1657,7 +1622,7 @@ a:hover {
 #booking-home .column.options button {
     color: #fff;
     text-transform: uppercase;
-    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    font-family: "ITC New Baskerville", Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0.1px;
@@ -1671,7 +1636,7 @@ a:hover {
     display: block;
     height: 80px;
     padding: 0 10px;
-    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    font-family: "ITC New Baskerville", Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 80px;
@@ -1751,7 +1716,7 @@ a:hover {
 #booking-home .options-dropdown .option {
     position: relative;
     color: #44443C;
-    font-family: "Gill Sans", Helvetica, Arial, sans-serif;
+    font-family: "ITC New Baskerville", Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 78px;
@@ -2358,7 +2323,7 @@ a:hover {
 }
 
 .page-content h2 {
-    font: normal 20px/1.2 "Gill Sans", Helvetica, Arial, sans-serif;
+    font: normal 20px/1.2 "ITC New Baskerville", Helvetica, Arial, sans-serif;
     font-size: 2vw;
     text-transform: uppercase;
     color: #44443C;
