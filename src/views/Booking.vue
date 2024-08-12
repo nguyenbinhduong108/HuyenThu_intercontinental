@@ -199,7 +199,7 @@
                     </div>
                   </div>
                   <div class="action">
-                    <button>Booking now</button>
+                    <button @click="handleBooking">Booking now</button>
                   </div>
                 </div>
               </div>
@@ -235,15 +235,30 @@
 
     </div>
   </footer>
+
+  <DetailForm v-if="isShowDetailForm" @closeForm="handleCloseForm"/>
 </template>
 
 <script setup lang="ts">
+import DetailForm from '@/components/DetailForm.vue';
+import { ref } from 'vue';
+
+const isShowDetailForm = ref<boolean>(false);
+
 const handleViewDetails = () => {
-  
+  isShowDetailForm.value = true
+}
+
+const handleCloseForm = () => {
+  isShowDetailForm.value = false
 }
 
 const handleBackToTop = () => {
 
+}
+
+const handleBooking = () => {
+  
 }
 </script>
 
@@ -451,6 +466,12 @@ header {
                   min-width: 150px;
                   min-height: 45px;
                   cursor: pointer;
+                  transition: 350ms ease-in-out;
+
+                  &:hover{
+                    color: #fff;
+                    background: #44443C;
+                  }
                 }
               }
             }
