@@ -12,5 +12,9 @@ import { RouterView } from 'vue-router'
   padding: 0;
   box-sizing: border-box;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 </style>
 

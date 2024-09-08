@@ -108,7 +108,7 @@
           </div>
         </div>
       </div>
-<!-- xử lý mảng room -->
+
       <BookingCard v-for="room in rooms" :key="room.id" :id="room.id" @idSelect="handleViewDetails"/>
     </div>
   </div>
@@ -162,13 +162,16 @@ import BookingCard from '@/components/BookingCard.vue';
 import { ref, onMounted } from 'vue';
 import axios from "axios";
 import { useDatesStore } from '@/stores/dates'
-
+//biến 
 const isShowDialog = ref<boolean>(false)
 
 const isShowDetailForm = ref<boolean>(false);
 const rooms = ref<any>([]);
 const idSelect = ref<string>('');
 
+const roomNumber = ref<string>('');
+
+//xử lý hàm
 const handleViewDetails = (id: string) => {
   idSelect.value = id;
   isShowDetailForm.value = true
@@ -197,11 +200,6 @@ onMounted(async () => {
   else if(useDates.checkIn != '' && useDates.checkOut != ''){
     rooms.value = (await getRoomWithDates()).data;
   } 
-  axios
-      .get(`http://localhost:8081/hotelmaster/room/available-in-range?startDate=${useDates.checkIn}&endDate=${useDates.checkOut}`)
-      .then(response => (
-        console.log("data respon", response)
-      ))
 } );
 
 const handleBackToTop = () => {
@@ -213,7 +211,7 @@ const handleBooking = () => {
   isShowDialog.value = true;
   axios.post('http://localhost:8081/hotelmaster/booking', {
         "username": null,
-        "roomNumber": "101",
+        "roomNumber": roomNumber,
         "checkInDate": "2024-02-02",
         "checkOutDate": "2024-02-02",
         "totalPrice": 10000,

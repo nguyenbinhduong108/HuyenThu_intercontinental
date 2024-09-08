@@ -2,7 +2,7 @@
   <div class="background">
     <div class="dialog">
       <div class="dialog-header">
-        <div class="room-name">1 King Classic City View</div>
+        <div class="room-name">Room {{ room.roomNumber }}</div>
         <div class="close" @click="handleCloseForm">
           <i class="fas fa-times"></i>
         </div>
@@ -11,7 +11,7 @@
       <div class="dialog-content">
         <div class="room-image">
           <img
-            src="https://digital.ihg.com/is/image/ihg/intercontinental-hanoi-8359432378-4x3?wid=540&fit=constrain"
+            :src='room.imageUrl?.replace("https://", "https://i.") + ".jpg"'
             alt=""
           />
         </div>
@@ -77,7 +77,7 @@
                 fill="#555555"
               ></path>
             </svg>
-            <label style="font-weight: 500">43 sqmt</label>
+            <!-- <label style="font-weight: 500">43 sqmt</label> -->
           </span>
         </div>
 
@@ -164,11 +164,29 @@
 </template>
 
 <script setup lang="ts">
+import axios from 'axios';
+import { ref, onMounted } from 'vue';
+
+const props = defineProps({
+  id: String
+})
 const emit = defineEmits(["closeForm"])
+const room = ref<any>({});
 
 const handleCloseForm = () => {
     emit('closeForm');
 }
+
+const getRoom = async (id: any) => {
+  return await axios.get(`http://localhost:8081/hotelmaster/room/${id}`);
+}
+
+onMounted(async () => {
+  console.log((await getRoom(props.id)).data);
+  room.value = (await getRoom(props.id)).data;
+} );
+
+
 </script>
 
 <style lang="scss">

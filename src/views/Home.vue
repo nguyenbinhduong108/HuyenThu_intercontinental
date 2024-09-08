@@ -19,8 +19,15 @@
         class="dark-logo"
       />
     </a>
+    <button class="booking-trigger button" @click="handleShowList">
+      Danh sách phòng
+    </button>
     <button class="booking-trigger button" @click="handleShowBooking">
       Đặt phòng ngay
+    </button>
+    
+    <button class="booking-trigger button" @click="handleRegister">
+      {{user.code == 1000 ? user.result?.username : 'Đăng ký | Đăng nhập' }}
     </button>
     <div
       id="mobile-navigation"
@@ -231,568 +238,16 @@
   </div>
   <article id="booking" tabindex="-1">
     <div class="center-column">
-      <form action="/booking" method="post" target="_blank">
+      <form>
         <div class="booking-close-button close"><span></span></div>
         <fieldset>
           <legend>Đặt phòng</legend>
           <div class="column dates">
-            <label for="booking-dates">Dates:</label>
-            <input type="text" id="booking-dates" value />
-            <div class="input-overlay"></div>
-            <div id="booking-datepicker" class="hasDatepicker">
-              <div class="arrival-departure-status">
-                <div
-                  class="arrival visible"
-                  data-text="Select Arrival Date"
-                ></div>
-                <div class="departure" data-text="Select Departure Date"></div>
-              </div>
-
-              <div
-                class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"
-                style="display: block"
-              >
-                <div
-                  class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"
-                >
-                  <a
-                    class="ui-datepicker-prev ui-corner-all ui-state-disabled"
-                    title="Prev"
-                    role="button"
-                    aria-pressed="false"
-                    aria-disabled="true"
-                    ><span class="ui-icon ui-icon-circle-triangle-w"
-                      >Prev</span
-                    ></a
-                  ><a
-                    class="ui-datepicker-next ui-corner-all"
-                    data-handler="next"
-                    data-event="click"
-                    title="Next"
-                    role="button"
-                    aria-pressed="false"
-                    ><span class="ui-icon ui-icon-circle-triangle-e"
-                      >Next</span
-                    ></a
-                  >
-                  <div class="ui-datepicker-title">
-                    <span class="ui-datepicker-month">August</span>&nbsp;<span
-                      class="ui-datepicker-year"
-                      >2024</span
-                    >
-                  </div>
-                </div>
-                <table class="ui-datepicker-calendar">
-                  <thead>
-                    <tr>
-                      <th scope="col" class="ui-datepicker-week-end">
-                        <span title="Sunday">Su</span>
-                      </th>
-                      <th scope="col"><span title="Monday">Mo</span></th>
-                      <th scope="col"><span title="Tuesday">Tu</span></th>
-                      <th scope="col"><span title="Wednesday">We</span></th>
-                      <th scope="col"><span title="Thursday">Th</span></th>
-                      <th scope="col"><span title="Friday">Fr</span></th>
-                      <th scope="col" class="ui-datepicker-week-end">
-                        <span title="Saturday">Sa</span>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td
-                        class="ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
-                      >
-                        <span class="ui-state-default">28</span>
-                      </td>
-                      <td
-                        class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
-                      >
-                        <span class="ui-state-default">29</span>
-                      </td>
-                      <td
-                        class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
-                      >
-                        <span class="ui-state-default">30</span>
-                      </td>
-                      <td
-                        class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled"
-                      >
-                        <span class="ui-state-default">31</span>
-                      </td>
-                      <td class="ui-datepicker-unselectable ui-state-disabled">
-                        <span class="ui-state-default">1</span>
-                      </td>
-                      <td class="ui-datepicker-unselectable ui-state-disabled">
-                        <span class="ui-state-default">2</span>
-                      </td>
-                      <td
-                        class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled"
-                      >
-                        <span class="ui-state-default">3</span>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        class="ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled"
-                      >
-                        <span class="ui-state-default">4</span>
-                      </td>
-                      <td class="ui-datepicker-unselectable ui-state-disabled">
-                        <span class="ui-state-default">5</span>
-                      </td>
-                      <td class="ui-datepicker-unselectable ui-state-disabled">
-                        <span class="ui-state-default">6</span>
-                      </td>
-                      <td class="ui-datepicker-unselectable ui-state-disabled">
-                        <span class="ui-state-default">7</span>
-                      </td>
-                      <td class="ui-datepicker-unselectable ui-state-disabled">
-                        <span class="ui-state-default">8</span>
-                      </td>
-                      <td
-                        class="ui-datepicker-today"
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default ui-state-highlight"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  9th, 2024"
-                          >9</a
-                        >
-                      </td>
-                      <td
-                        class="ui-datepicker-week-end ui-datepicker-highlight checkin-date ui-datepicker-current-day"
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default ui-state-active"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  10th, 2024"
-                          >10</a
-                        >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        class="ui-datepicker-week-end ui-datepicker-highlight"
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  11th, 2024"
-                          >11</a
-                        >
-                      </td>
-                      <td
-                        class="ui-datepicker-highlight checkout-date"
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  12th, 2024"
-                          >12</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  13th, 2024"
-                          >13</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  14th, 2024"
-                          >14</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  15th, 2024"
-                          >15</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  16th, 2024"
-                          >16</a
-                        >
-                      </td>
-                      <td
-                        class="ui-datepicker-week-end"
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  17th, 2024"
-                          >17</a
-                        >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        class="ui-datepicker-week-end"
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  18th, 2024"
-                          >18</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  19th, 2024"
-                          >19</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  20th, 2024"
-                          >20</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  21st, 2024"
-                          >21</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  22nd, 2024"
-                          >22</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  23rd, 2024"
-                          >23</a
-                        >
-                      </td>
-                      <td
-                        class="ui-datepicker-week-end"
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  24th, 2024"
-                          >24</a
-                        >
-                      </td>
-                    </tr>
-                    <tr>
-                      <td
-                        class="ui-datepicker-week-end"
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  25th, 2024"
-                          >25</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  26th, 2024"
-                          >26</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  27th, 2024"
-                          >27</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  28th, 2024"
-                          >28</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  29th, 2024"
-                          >29</a
-                        >
-                      </td>
-                      <td
-                        class=" "
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  30th, 2024"
-                          >30</a
-                        >
-                      </td>
-                      <td
-                        class="ui-datepicker-week-end"
-                        data-handler="selectDay"
-                        data-event="click"
-                        data-month="7"
-                        data-year="2024"
-                      >
-                        <a
-                          class="ui-state-default"
-                          href="#"
-                          role="button"
-                          aria-pressed="false"
-                          aria-label="Check In, undefined,  31st, 2024"
-                          >31</a
-                        >
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <input
-              type="hidden"
-              id="booking-checkin"
-              name="checkin"
-              value="08/10/2024"
-            />
-            <input
-              type="hidden"
-              id="booking-checkout"
-              name="checkout"
-              value="08/12/2024"
-            />
+            <label>Checkin:</label>
+            <input type="date" v-model="checkin" @change="selectCheckin"/>
+            <label>Checkout:</label>
+            <input type="date" v-model="checkout" @change="selectCheckout"
           </div>
-          <div class="column rooms">
-            <label id="horizontal-booking-rooms">Phòng nghỉ:</label>
-            <div class="select-wrapper" data-select-class="booking-rooms">
-              <select
-                class="booking-rooms"
-                name="rooms"
-                aria-labelledby="horizontal-booking-rooms"
-              >
-                <option value="1" selected>1 Phòng nghỉ</option>
-                <option value="2">2 Phòng nghỉ</option>
-                <option value="3">3 Phòng nghỉ</option>
-                <option value="4">4 Phòng nghỉ</option>
-                <option value="5">5 Phòng nghỉ</option>
-                <option value="6">6 Phòng nghỉ</option>
-                <option value="7">7 Phòng nghỉ</option>
-                <option value="8">8 Phòng nghỉ</option>
-                <option value="9">9 Phòng nghỉ</option>
-              </select>
-              <div class="select-icon"></div>
-            </div>
-            <div class="select-icon"></div>
-          </div>
-          <div class="column adults">
-            <label for="booking-adults">Adults:</label>
-            <div class="select-wrapper" data-select-class="undefined">
-              <select id="booking-adults" name="adults">
-                <option value="1" selected>1 Người lớn</option>
-                <option value="2">2 Người lớn</option>
-                <option value="3">3 Người lớn</option>
-                <option value="4">4 Người lớn</option>
-                <option value="5">5 Người lớn</option>
-              </select>
-              <div class="select-icon"></div>
-            </div>
-            <div class="select-icon"></div>
-          </div>
-          <div class="column children">
-            <label for="booking-children">Children:</label>
-            <div class="select-wrapper" data-select-class="undefined">
-              <select id="booking-children" name="children">
-                <option value="0" selected>0 Trẻ em</option>
-                <option value="1">1 Child</option>
-                <option value="2">2 Trẻ em</option>
-                <option value="3">3 Trẻ em</option>
-                <option value="4">4 Trẻ em</option>
-              </select>
-              <div class="select-icon"></div>
-            </div>
-            <div class="select-icon"></div>
-          </div>
-
           <button
             @click="handleBooking"
             class="button"
@@ -2044,16 +1499,16 @@
             <h1>KHÁCH SẠN ĐỘC ĐÁO NỔI TRÊN MẶT HỒ</h1>
             <p style="text-align: justify">
               Tọa lạc trên mặt nước hồ Tây yên bình và gần di tích chùa Kim Liên
-              với lịch sử hơn 800 năm tuổi, InterContinental Hanoi Westlake hứa
+              với lịch sử hơn 800 năm tuổi, Huyền Thu Hanoi Westlake hứa
               hẹn sẽ mang lại một trải nghiệm nghỉ dưỡng vô cùng bình yên giữa
               lòng thành phố sôi động, tấp nập.&nbsp;<br />
-              InterContinental Hanoi Westlake là nơi các du khách sẽ được tận
+              Huyền Thu Hanoi Westlake là nơi các du khách sẽ được tận
               hưởng không gian nghỉ dưỡng sang trọng cùng những đặc quyền độc
-              đáo chỉ dành riêng cho quý khách tại Club InterContinental. Cùng
+              đáo chỉ dành riêng cho quý khách tại Club Huyền Thu. Cùng
               thưởng thức ẩm thực thượng hạng và ghi lại những khoảnh khắc hoàng
               hôn tuyệt đẹp tại quán bar nổi hoàn toàn trên mặt nước, duy nhất
               tại Hà Nội - Sunset Bar. Sở hữu vị trí lý tưởng, chỉ cách trung
-              tâm thành phố vài phút, khách sạn InterContinental Hanoi Westlake
+              tâm thành phố vài phút, khách sạn Huyền Thu Hanoi Westlake
               vẫn giữ được vẻ bình yên hiếm có giữa nhịp sống nhộn nhịp hối hả
               của đô thị.&nbsp;
             </p>
@@ -2089,9 +1544,9 @@
                 cocktail thượng hạng hay dịch vụ trà chiều đẳng cấp sẽ là những
                 trải nghiệm khó quên.
               </p>
-              <a href="/vn/dining/sunset-bar" class="view-link text-link">
+              <!-- <a href="/vn/dining/sunset-bar" class="view-link text-link">
                 Tìm hiểu thêm
-              </a>
+              </a> -->
             </div>
           </article>
           <article class="item-block">
@@ -2111,13 +1566,13 @@
                 Lấy cảm hứng từ văn hoá Pháp, nhà hàng Café du Lac mang hơi thở
                 của một nhà hàng Pháp giữa lòng thủ đô Hà Nội. Từ thiết kế cổ
                 điển trong từng chi tiết kiến trúc đến vị trí lý tưởng trên mặt
-                nước hồ Tây yên bình, InterContinental Hanoi Westlake luôn mong
+                nước hồ Tây yên bình, Huyền Thu Hanoi Westlake luôn mong
                 muốn dành tặng quý khách hàng một trải nghiệm đẳng cấp nhưng vô
                 cùng thân thuộc và gần gũi.
               </p>
-              <a href="/vn/dining/cafe-du-lac" class="view-link text-link">
+              <!-- <a href="/vn/dining/cafe-du-lac" class="view-link text-link">
                 Tìm hiểu thêm
-              </a>
+              </a> -->
             </div>
           </article>
           <article class="item-block">
@@ -2140,9 +1595,9 @@
                 một sự pha trộn giữa thiết kế châu Âu hiện đại và Á Đông độc
                 đáo, một bức tranh với những gam màu rực rỡ.
               </p>
-              <a href="/vn/dining/milan-restaurant" class="view-link text-link">
+              <!-- <a href="/vn/dining/milan-restaurant" class="view-link text-link">
                 Tìm hiểu thêm
-              </a>
+              </a> -->
             </div>
           </article>
           <article class="item-block">
@@ -2165,12 +1620,12 @@
                 bếp ưu tú, nhà hàng Saigon mang tới những món ăn truyền thống
                 Việt Nam đa dạng, phong phú và đậm đà bản sắc.
               </p>
-              <a
+              <!-- <a
                 href="/vn/dining/saigon-restaurant"
                 class="view-link text-link"
               >
                 Tìm hiểu thêm
-              </a>
+              </a> -->
             </div>
           </article>
           <article class="item-block">
@@ -2193,9 +1648,9 @@
                 những món ăn nhẹ, hay kết thúc một ngày dài với ly rượu vang đỏ
                 hoặc cognac vào buổi tối.
               </p>
-              <a href="/vn/dining/diplomat-lounge" class="view-link text-link">
+              <!-- <a href="/vn/dining/diplomat-lounge" class="view-link text-link">
                 Tìm hiểu thêm
-              </a>
+              </a> -->
             </div>
           </article>
           <article class="item-block">
@@ -2212,15 +1667,15 @@
             <div class="section-block-content page-content">
               <h3 class="sb-title">Penfolds Lounge</h3>
               <p class="sb-descr">
-                Đến với InterContinental Hanoi Westlake, mọi mong muốn của quý
+                Đến với Huyền Thu Hanoi Westlake, mọi mong muốn của quý
                 khách hàng đều được đáp ứng. Trong một không gian ấm cúng, sang
                 trọng, tại Penfolds Lounge, cùng tận hưởng bữa tối thân mật với
                 20 người, phù hợp cho những bữa tiệc cá nhân hay những buổi gặp
                 gỡ trong công việc.
               </p>
-              <a href="/vn/dining/penfolds-lounge" class="view-link text-link">
+              <!-- <a href="/vn/dining/penfolds-lounge" class="view-link text-link">
                 Tìm hiểu thêm
-              </a>
+              </a> -->
             </div>
           </article>
         </div>
@@ -2264,13 +1719,13 @@
                     sẵn sàng mang giấc mơ về một câu chuyện tình yêu trong cổ
                     tích thành hiện thực?
                   </p>
-                  <a
+                  <!-- <a
                     href="https://hanoi.intercontinental.com/vn/special-offers/meet-the-masters-workshop"
                     class="view-link text-link"
                     target="_blank"
                     tabindex="-1"
                     >Tìm hiểu thêm</a
-                  >
+                  > -->
                 </div>
               </article>
               <article
@@ -2293,13 +1748,13 @@
                     muốn bỏ lỡ tinh hoa ẩm thực ngày thu trứ danh của người Hà
                     Nội!
                   </p>
-                  <a
+                  <!-- <a
                     href="https://hanoi.intercontinental.com/vn/special-offers/green-rice-specialities"
                     class="view-link text-link"
                     target="_blank"
                     tabindex="-1"
                     >Tìm hiểu thêm</a
-                  >
+                  > -->
                 </div>
               </article>
               <article
@@ -2319,15 +1774,15 @@
                   <p class="fp-descr">
                     Bạn đang tìm kiếm một kỳ nghỉ hoàn hảo dành tặng “nửa yêu
                     thương” của mình? Đừng bỏ lỡ gói nghỉ dưỡng Je T'aime tại
-                    InterContinental Hanoi Westlake!
+                    Huyền Thu Hanoi Westlake!
                   </p>
-                  <a
+                  <!-- <a
                     href="https://hanoi.intercontinental.com/vn/special-offers/jetaimepackage"
                     class="view-link text-link"
                     target="_blank"
                     tabindex="-1"
                     >Tìm hiểu thêm</a
-                  >
+                  > -->
                 </div>
               </article>
               <article
@@ -2384,13 +1839,13 @@
                     sẵn sàng mang giấc mơ về một câu chuyện tình yêu trong cổ
                     tích thành hiện thực?
                   </p>
-                  <a
+                  <!-- <a
                     href="https://hanoi.intercontinental.com/vn/special-offers/meet-the-masters-workshop"
                     class="view-link text-link"
                     target="_blank"
                     tabindex="-1"
                     >Tìm hiểu thêm</a
-                  >
+                  > -->
                 </div>
               </article>
               <article
@@ -2413,12 +1868,12 @@
                     muốn bỏ lỡ tinh hoa ẩm thực ngày thu trứ danh của người Hà
                     Nội!
                   </p>
-                  <a
+                  <!-- <a
                     href="https://hanoi.intercontinental.com/vn/special-offers/green-rice-specialities"
                     class="view-link text-link"
                     target="_blank"
                     >Tìm hiểu thêm</a
-                  >
+                  > -->
                 </div>
               </article>
               <article
@@ -2442,14 +1897,14 @@
                   <p class="fp-descr">
                     Bạn đang tìm kiếm một kỳ nghỉ hoàn hảo dành tặng “nửa yêu
                     thương” của mình? Đừng bỏ lỡ gói nghỉ dưỡng Je T'aime tại
-                    InterContinental Hanoi Westlake!
+                    Huyền Thu Hanoi Westlake!
                   </p>
-                  <a
+                  <!-- <a
                     href="https://hanoi.intercontinental.com/vn/special-offers/jetaimepackage"
                     class="view-link text-link"
                     target="_blank"
                     >Tìm hiểu thêm</a
-                  >
+                  > -->
                 </div>
               </article>
               <article
@@ -2478,12 +1933,12 @@
                     trị văn hóa sâu sắc và lời chúc ý nghĩa cho một mùa Trung
                     thu vẹn tròn.
                   </p>
-                  <a
+                  <!-- <a
                     href="https://hanoi.intercontinental.com/vn/special-offers/mooncake-collection-2024"
                     class="view-link text-link"
                     target="_blank"
                     >Tìm hiểu thêm</a
-                  >
+                  > -->
                 </div>
               </article>
               <article
@@ -2513,13 +1968,13 @@
                     sẵn sàng mang giấc mơ về một câu chuyện tình yêu trong cổ
                     tích thành hiện thực?
                   </p>
-                  <a
+                  <!-- <a
                     href="https://hanoi.intercontinental.com/vn/special-offers/meet-the-masters-workshop"
                     class="view-link text-link"
                     target="_blank"
                     tabindex="-1"
                     >Tìm hiểu thêm</a
-                  >
+                  > -->
                 </div>
               </article>
               <article
@@ -2546,13 +2001,13 @@
                     muốn bỏ lỡ tinh hoa ẩm thực ngày thu trứ danh của người Hà
                     Nội!
                   </p>
-                  <a
+                  <!-- <a
                     href="https://hanoi.intercontinental.com/vn/special-offers/green-rice-specialities"
                     class="view-link text-link"
                     target="_blank"
                     tabindex="-1"
                     >Tìm hiểu thêm</a
-                  >
+                  > -->
                 </div>
               </article>
             </div>
@@ -2563,9 +2018,9 @@
             ></span>
           </div>
         </div>
-        <div class="featured-promos-button-wrapper">
+        <!-- <div class="featured-promos-button-wrapper">
           <a href="/booking" class="button"> Xem thêm Ưu đãi </a>
-        </div>
+        </div> -->
       </div>
     </section>
   </section>
@@ -2622,7 +2077,7 @@
             style="font-family: Arial, Helvetica, sans-serif"
           ></div>
           <small class="copyright"
-            >© Copyright 2024. All rights reserved. InterContinental Hanoi
+            >© Copyright 2024. All rights reserved. Huyền Thu Hanoi
             Westlake</small
           >
         </div>
@@ -2810,6 +2265,23 @@
 
 <script setup lang="ts">
 import router from "@/router";
+import axios from "axios";
+import { onBeforeMount, onMounted, ref } from "vue";
+import { useDatesStore } from '@/stores/dates'
+import { useUserStore } from '@/stores/user'
+
+const useUser = useUserStore();
+
+const user = ref<any>({})
+
+onBeforeMount(() => {
+  user.value = useUser.user;
+  console.log(125371253, user.value)
+  // console.log(11111111111111,user.value);
+})
+
+const checkin = ref<Date>(new Date);
+const checkout = ref<Date>(new Date);
 
 const handleShowBooking = () => {
   const showBooking = document.querySelector<HTMLElement>("#booking");
@@ -2823,9 +2295,36 @@ const handleShowBooking = () => {
   }
 };
 
-const handleBooking = () => {
+const handleShowList = () => {
+  router.push({ name: "list" });
+}
+const useDates = useDatesStore();
+const selectCheckin = () => {
+  console.log(checkin.value)
+  
+  useDates.getCheckIn(checkin.value)
+}
+
+const selectCheckout = () => {
+  console.log(checkout.value)
+  useDates.getCheckOut(checkout.value)
+}
+
+import { useRoomStore } from "@/stores/rooms";
+
+const useRoom = useRoomStore()
+
+const handleBooking = async () => {
   router.push({ name: "booking" });
 };
+
+const handleRegister = () => {
+  router.push({ name: "register" });
+}
+
+const getRoom = async () => {
+  return await axios.get(`http://localhost:8081/hotelmaster/room/available-in-range?startDate=${checkin.value}&endDate=${checkout.value}`);
+}
 </script>
 
 <style scoped>
