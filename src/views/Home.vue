@@ -3,12 +3,12 @@
     <a href="#content" id="skip-to-content">Skip to Content (Press Enter)</a>
     <a class="logo" href="/">
       <img
-        src="../../public/assets/logo.svg"
+        src="../../public/assets/86-Photoroom (2) (1).png"
         alt="InterContinental Hanoi Westlake Logo"
         width="225"
         height="87"
         title="InterContinental Hanoi Westlake"
-        class="white-logo"
+        class="white-logo" style="object-fit: cover;"
       />
       <img
         src="../../public/assets/logo-dark.svg"

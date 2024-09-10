@@ -8,26 +8,43 @@
       <!-- <h4>It's free and only takes a minute</h4> -->
       <form>
         <label>First Name</label>
-        <input type="text" placeholder="" />
+        <input v-model="signupUser.firstName" @focusout="focusoutFirstName" type="text" placeholder="" />
+        <div class="error-text" v-if="error.firstName">Nhập họ.</div>
+
+
         <label>Last Name</label>
-        <input type="text" placeholder="" />
-        <label> Email</label>
-        <input type="email" placeholder="" />
+        <input v-model="signupUser.lastName" @focusout="focusoutLastName" type="text" placeholder="" />
+        <div class="error-text" v-if="error.lastName">Nhập tên.</div>
+
+        <label>Phone</label>
+        <input v-model="signupUser.phone"  @focusout="focusoutPhone" type="text" placeholder="" />
+        <div class="error-text" v-if="error.phone">Nhập số điện thoại.</div>
+
+        <label>Email</label>
+        <input v-model="signupUser.email" @focusout="focusoutEmail" type="email" placeholder="" />
+        <div class="error-text" v-if="error.email">Nhập email.</div>
+
+        <label>User Name</label>
+        <input v-model="signupUser.username" @focusout="focusoutUserName" type="text" placeholder="" />
+        <div class="error-text" v-if="error.username">Nhập tên đăng nhập.</div>
+        
         <label>Password</label>
-        <input type="password" placeholder="" />
+        <input v-model="signupUser.password" @focusout="focusoutPassword" type="password" placeholder="" />
+        <div class="error-text" v-if="error.email">Nhập mật khẩu.</div>
+
         <label>Confirm Password</label>
-        <input type="password" placeholder="" />
-        <input type="button" value="Submit" />
+        <input v-model="signupUser.confirmPassword" @focusout="focusoutConfirmPassword" type="password" placeholder="" />
+        <div class="error-text" v-if="error.confirmPassword">Nhập xác nhận mật khẩu.</div>
+        <div class="error-text" v-if="error.wrongConfirmPassword">Xác nhận mật khẩu không chính xác.</div>
+
+        <button class="login-btn" @click="handleSignUp">Sign up</button>
+        <p class="para-2" v-if="status=='Login'">
+          <span style="color: black;">Have an account?</span> 
+          <a @click="Login"style="color: blue;">Login here</a>
+        </p>
       </form>
-      <p>
-        By clicking the Sign Up button,you agree to our <br />
-        <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
-      </p>
   </div>
-  <p class="para-2" v-if="status=='Login'">
-    <span style="color: black;">Have an account?</span> 
-    <a @click="Login"style="color: blue;">Login here</a>
-  </p>
+  
 
     <div class="login-box" v-if="status=='SignUp'">
       <h1>Đăng nhập</h1>
@@ -46,6 +63,17 @@
       <span style="color: black;">Not have an account?</span> 
       <span @click="SignUp" style="color: blue;">Sign Up Here</span>
     </p>
+
+<div class="wrapper open" v-if="isShowDialog">
+  <div class="overlay"></div>
+    <div class="dialog" role="dialog" aria-labelledby="title" aria-describedby="content">
+      <button class="close" @click="closeDialog">✖️</button>
+      <h1 id="title">Thông báo</h1>
+      <div id="content" class="content">
+        <p>Tài khoản này đã tồn tại</p>
+      </div>
+    </div>
+  </div>
    
 </template>
 <script setup lang="ts">
@@ -56,10 +84,33 @@ import { useUserStore } from "@/stores/user"
 
 const useUser = useUserStore();
 
+const isShowDialog = ref<boolean>(false)
+
 
 const userData = ref<any>({
   username: '',
   password: '',
+})
+
+const signupUser = ref<any>({
+  firstName:'',
+  lastName:'',
+  email:'',
+  phone:'',
+  password:'',
+  confirmPassword: '',
+  username:'' 
+})
+
+const error = ref<any>({
+  firstName:false,
+  lastName:false,
+  email:false,
+  phone:false,
+  password:false,
+  confirmPassword: false,
+  wrongConfirmPassword: false,
+  username:false 
 })
 
 const status = ref<string>("SignUp")
@@ -75,16 +126,84 @@ const handleLogin = async () => {
       "password": userData.value.password,
     }
   )
-
   // console.log(result.data);
-
   useUser.setUser(result.data);
-
   // console.log(123123123123,useUser.user)
-
-
-
   userouter.go(-1);
+}
+
+const handleSignUp = async () => {
+  if(signupUser.value?.password != signupUser.value?.confirmPassword){
+    error.value.wrongConfirmPassword = true;
+    return;
+  } else {
+    error.value.wrongConfirmPassword = false;
+  }
+
+  if(validateForm() == false){
+    return;
+  }
+  else{
+    const result: any = await axios.post('http://localhost:8081/hotelmaster/auth/create', {
+      fullName: signupUser.value?.firstName + " " +signupUser.value?.lastName,
+      email: signupUser.value?.email,
+      phone: signupUser.value?.phone,
+      password: signupUser.value?.password,
+      username: signupUser.value?.username
+    }).then((response: any) => {
+      useUser.setUser(response.data);
+      router.push({name: 'home'})
+    }).catch((error: any) => {
+      isShowDialog.value = true;
+
+    })
+
+  }
+}
+
+const closeDialog = () =>{
+  isShowDialog.value = false;
+}
+
+const validateForm = (): boolean => {
+  let index = 0;
+  if (signupUser.value?.firstName == "") {
+    error.value.firstName = true;
+    index++;
+  } 
+  if (signupUser.value?.lastName == "") {
+    error.value.lastName = true;
+    index++;
+  }
+  if (signupUser.value?.phone == "") {
+    error.value.phone = true;
+    index++;
+  }
+  if (signupUser.value?.email == "") {
+    error.value.email = true;
+    index++;
+  }
+  if (signupUser.value?.password == "") {
+    error.value.password = true;
+    index++;
+  }
+  if (signupUser.value?.confirmPassword == "") {
+    error.value.confirmPassword = true;
+    index++;
+  }
+  if(signupUser.value?.password != signupUser.value?.confirmPassword){
+    error.value.wrongConfirmPassword = true;
+    index++;
+  }
+  if (signupUser.value?.username == "") {
+    error.value.username = true;
+    index++;
+  }
+
+  if(index !==0) {
+    return false;
+  }
+  return true;
 }
 
 import { useRouter } from 'vue-router';
@@ -101,6 +220,70 @@ const SignUp = () => {
 
 const Close = () => {
   router.push({name: 'home'})
+}
+
+const focusoutFirstName = () => {
+  if (signupUser.value?.firstName == "") {
+    error.value.firstName = true;
+  } else {
+    error.value.firstName = false;
+  }
+}
+
+const focusoutLastName = () => {
+  if (signupUser.value?.lastName == "") {
+    error.value.lastName = true;
+  } else {
+    error.value.lastName = false;
+  }
+}
+
+const focusoutPhone = () => {
+  if (signupUser.value?.phone == "") {
+    error.value.phone = true;
+  } else {
+    error.value.phone = false;
+  }
+}
+
+const focusoutEmail = () => {
+  if (signupUser.value?.email == "") {
+    error.value.email = true;
+  } else {
+    error.value.email = false;
+  }
+}
+
+const focusoutPassword = () => {
+  if (signupUser.value?.password == "") {
+    error.value.password = true;
+  } else {
+    error.value.password = false;
+  }
+}
+
+const focusoutConfirmPassword = () => {
+  if (signupUser.value?.confirmPassword == "") {
+    error.value.confirmPassword = true;
+  } else {
+    error.value.confirmPassword = false;
+  }
+}
+
+const focusoutUserName = () => {
+  if (signupUser.value?.username == "") {
+    error.value.username = true;
+  } else {
+    error.value.username = false;
+  }
+}
+
+const wrongConfirmPassword = () => {
+  if(signupUser.value?.password != signupUser.value?.confirmPassword){
+    error.value.wrongConfirmPassword = true;
+  } else {
+    error.value.wrongConfirmPassword = false;
+  }
 }
 
 
@@ -166,7 +349,6 @@ p {
   text-align: center;
   color: white;
   font-size: 15px;
-  margin-top: -10px;
 }
 .para-2 a {
   color: #49c1a2;
@@ -190,5 +372,52 @@ p {
 
 .close:hover{
   background-color: gainsboro;
+}
+
+.error-text {
+          margin-top: 10px;
+          margin-bottom: 0;
+          font-size: 14px;
+          line-height: 150%;
+          font-family: Graphik-Medium, sans-serif;
+          color: #bc261a;
+        }
+
+.dialog {
+    background: #ffffff;
+    max-width: 600px;
+    padding: 1rem;
+    position: fixed;
+    max-height: 200px;
+    overflow: hidden;
+}
+
+.wrapper.open {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 1;
+    visibility: visible;
+}
+.wrapper {
+    opacity: 0;
+    transition: visibility 0s, opacity 0.25s ease-in;
+}
+
+.overlay {
+    background: rgba(0, 0, 0, 0.2);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
 }
 </style>
