@@ -4,12 +4,12 @@
     <div class="brandLogoNavContainer">
       <a class="logo" href="/">
         <img
-          src="../../public/assets/logo-dark.svg"
+          src="../../public/assets/86-Photoroom (2) (1).png"
           alt="InterContinental Hanoi Westlake Logo"
-          width="200"
-          height="80"
+          width="225"
+          height="87"
           title="InterContinental Hanoi Westlake"
-          class="dark-logo"
+          class="white-logo" style="object-fit: cover; width: 70px;"
         />
       </a>
     </div>
@@ -109,7 +109,7 @@
         </div>
       </div>
 
-      <BookingCard v-for="room in rooms" :key="room.id" :id="room.id" @idSelect="handleViewDetails"/>
+      <BookingCard v-for="room in rooms" :key="room.id" :id="room.id" :isShowDetail="false" :checkInDate="room.checkInDate" :checkOutDate="room.checkOutDate" @idSelect="handleViewDetails"/>
     </div>
   </div>
 
@@ -162,6 +162,7 @@ import BookingCard from '@/components/BookingCard.vue';
 import { ref, onMounted } from 'vue';
 import axios from "axios";
 import { useDatesStore } from '@/stores/dates'
+import { useUserStore } from '@/stores/user'
 //biến 
 const isShowDialog = ref<boolean>(false)
 
@@ -181,43 +182,23 @@ const handleCloseForm = () => {
   isShowDetailForm.value = false
 }
 
-const getRoom = async () => {
-  return await axios.get('http://localhost:8081/hotelmaster/room');
-}
-const useDates = useDatesStore();
-const getRoomWithDates = async () => {
-  return await axios.get(`http://localhost:8081/hotelmaster/room/available-in-range?startDate=${useDates.checkIn}&endDate=${useDates.checkOut}`);
-}
-
-
 import { useRoomStore } from "@/stores/rooms";
 const useRoom = useRoomStore()
 
 onMounted(async () => {
-  if(useDates.checkIn == '' || useDates.checkOut == ''){
-    rooms.value = (await getRoom()).data;
-  }
-  else if(useDates.checkIn != '' && useDates.checkOut != ''){
-    rooms.value = (await getRoomWithDates()).data;
-  } 
+  rooms.value = (await axios.get(`http://192.168.1.200:8081/hotelmaster/booking/getbooking/${useUser.user.result.userId}`)).data
+  console.log(16238162386,rooms.value)
 } );
+
+const useUser = useUserStore();
+
 
 const handleBackToTop = () => {
 
 }
 
 
-const handleBooking = () => {
-  isShowDialog.value = true;
-  axios.post('http://localhost:8081/hotelmaster/booking', {
-        "username": null,
-        "roomNumber": roomNumber,
-        "checkInDate": "2024-02-02",
-        "checkOutDate": "2024-02-02",
-        "totalPrice": 10000,
-        "bookingStatus": "BOOKED"
-  })
-}
+
 </script>
 
 <style lang="scss" scoped>

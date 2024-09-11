@@ -4,12 +4,12 @@
     <div class="brandLogoNavContainer">
       <a class="logo" href="/">
         <img
-          src="../../public/assets/logo-dark.svg"
+          src="../../public/assets/86-Photoroom (2) (1).png"
           alt="InterContinental Hanoi Westlake Logo"
-          width="200"
-          height="80"
+          width="225"
+          height="87"
           title="InterContinental Hanoi Westlake"
-          class="dark-logo"
+          class="white-logo" style="object-fit: cover; width: 70px;"
         />
       </a>
     </div>
@@ -109,7 +109,7 @@
         </div>
       </div>
 <!-- xử lý mảng room -->
-      <BookingCard v-for="room in rooms" :key="room.id" :id="room.id" @idSelect="handleViewDetails"/>
+      <BookingCard v-for="room in rooms" :key="room.id" :id="room.id" :price="room.price" @idSelect="handleViewDetails"/>
     </div>
   </div>
 
@@ -179,11 +179,11 @@ const handleCloseForm = () => {
 }
 
 const getRoom = async () => {
-  return await axios.get('http://localhost:8081/hotelmaster/room');
+  return await axios.get('http://192.168.1.200:8081/hotelmaster/room');
 }
 const useDates = useDatesStore();
 const getRoomWithDates = async () => {
-  return await axios.get(`http://localhost:8081/hotelmaster/room/available-in-range?startDate=${useDates.checkIn}&endDate=${useDates.checkOut}`);
+  return await axios.get(`http://192.168.1.200:8081/hotelmaster/room/available?checkInDate=${useDates.checkIn}&checkOutDate=${useDates.checkOut}`);
 }
 
 
@@ -197,11 +197,11 @@ onMounted(async () => {
   else if(useDates.checkIn != '' && useDates.checkOut != ''){
     rooms.value = (await getRoomWithDates()).data;
   } 
-  axios
-      .get(`http://localhost:8081/hotelmaster/room/available-in-range?startDate=${useDates.checkIn}&endDate=${useDates.checkOut}`)
-      .then(response => (
-        console.log("data respon", response)
-      ))
+  // axios
+  //     .get(`http://192.168.1.200:8081/hotelmaster/room/available?checkInDate=${useDates.checkIn}&checkOutDate=${useDates.checkOut}`)
+  //     .then(response => (
+  //       console.log("data respon", response)
+  //     ))
 } );
 
 const handleBackToTop = () => {
@@ -211,7 +211,7 @@ const handleBackToTop = () => {
 
 const handleBooking = () => {
   isShowDialog.value = true;
-  axios.post('http://localhost:8081/hotelmaster/booking', {
+  axios.post('http://192.168.1.200:8081/hotelmaster/booking', {
         "username": null,
         "roomNumber": "101",
         "checkInDate": "2024-02-02",

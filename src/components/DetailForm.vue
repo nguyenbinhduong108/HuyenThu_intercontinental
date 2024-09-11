@@ -11,7 +11,7 @@
       <div class="dialog-content">
         <div class="room-image">
           <img
-            :src='room.imageUrl?.replace("https://", "https://i.") + ".jpg"'
+            :src='room.imageUrl'
             alt=""
           />
         </div>
@@ -178,7 +178,7 @@ const handleCloseForm = () => {
 }
 
 const getRoom = async (id: any) => {
-  return await axios.get(`http://localhost:8081/hotelmaster/room/${id}`);
+  return await axios.get(`http://192.168.1.200:8081/hotelmaster/room/${id}`);
 }
 
 onMounted(async () => {

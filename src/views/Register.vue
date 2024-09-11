@@ -50,7 +50,7 @@
       <h1>Đăng nhập</h1>
       <form @submit.prevent="handleLogin">
         <label>User name</label>
-        <input v-model="userData.username" type="text" placeholder="" />
+        <input v-model="userData.userName" type="text" placeholder="" />
         <label>Password</label>
         <input v-model="userData.password" type="password" placeholder="" />
         <!-- <input type="button" value="Submit" /> -->
@@ -88,7 +88,7 @@ const isShowDialog = ref<boolean>(false)
 
 
 const userData = ref<any>({
-  username: '',
+  userName: '',
   password: '',
 })
 
@@ -120,9 +120,9 @@ const status = ref<string>("SignUp")
 
 const handleLogin = async () => {
   // console.log(userData.value.username, userData.value.password) 
-  const result = await axios.post(`http://localhost:8081/hotelmaster/auth/login`, 
+  const result = await axios.post(`http://192.168.1.200:8081/hotelmaster/auth/login`, 
     {
-      "username": userData.value.username,
+      "userName": userData.value.userName,
       "password": userData.value.password,
     }
   )
@@ -144,7 +144,7 @@ const handleSignUp = async () => {
     return;
   }
   else{
-    const result: any = await axios.post('http://localhost:8081/hotelmaster/auth/create', {
+    const result: any = await axios.post('http://192.168.1.200:8081/hotelmaster/auth/create', {
       fullName: signupUser.value?.firstName + " " +signupUser.value?.lastName,
       email: signupUser.value?.email,
       phone: signupUser.value?.phone,

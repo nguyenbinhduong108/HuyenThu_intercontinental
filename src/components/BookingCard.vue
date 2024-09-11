@@ -3,7 +3,7 @@
     <div class="room-rate-container">
       <div class="room-rate-card">
         <div class="roomPhotos">
-          <img :src='room.imageUrl.replace("https://", "https://i.") + ".jpg"' alt="" />
+          <img :src='room.imageUrl' alt="" />
         </div>
 
         <div class="roomInfoPrice">
@@ -40,7 +40,10 @@
                   <!-- <label style="font-weight: 500">43 sqmt</label> -->
                 </span>
               </div>
-              <div class="roomDetails" @click="handleViewDetails(room.id)">Chi tiết</div>
+              <div v-if="isShowDetail" class="roomDetails" @click="handleViewDetails(room.id)">Chi tiết</div>
+              <div v-else class="checkInOutDate">
+                In: <span class="checkIn">{{validateDate(checkInDate as string)}}</span> - Out: <span class="checkOut">{{validateDate(checkOutDate as string)}}</span>
+              </div>
               <!-- <div class="roomDetails" @click="handleViewDetails(room.id)">Room Details</div> -->
             </div>
           </div>
@@ -50,7 +53,7 @@
                 <div class="rate-price-component">
                   <div class="member-discount">GIẢM GIÁ CHO THÀNH VIÊN</div>
                   <div class="from-pr">From <del>152</del></div>
-                  <div class="to-price">147 <span>VND</span></div>
+                  <div class="to-price">{{ formatPrice(price) }} <span>VND</span></div>
                   <div class="per-night">mỗi đêm</div>
                   <div class="taxes">Không bao gồm 5% Phí dịch vụ.</div>
                 </div>
@@ -236,7 +239,24 @@ import axios from 'axios';
 import { onMounted, ref } from 'vue';
 
 const props = defineProps({
-  id: String
+  id: String,
+  isShowDetail: {
+    type: Boolean,
+    default: true,
+  },
+  checkInDate:{
+    type: String,
+    required: false,
+  },
+  checkOutDate:{
+    type: String,
+    required: false,
+  },
+  price: {
+    type: String,
+    default: '147',
+    required: false,
+  }
 })
 import { useBookingStore } from '@/stores/booking'
 import router from '@/router';
@@ -252,7 +272,7 @@ const room = ref<any>({
 const isShowMore = ref<boolean>(false)
 
 const getRoom = async (id: any) => {
-  return await axios.get(`http://localhost:8081/hotelmaster/room/${id}`);
+  return await axios.get(`http://192.168.1.200:8081/hotelmaster/room/${id}`);
 }
 
 onMounted(async () => {
@@ -281,11 +301,23 @@ const handleSelectNoService = () => {
   router.push({ name: "payment" });
 }
 
+const validateDate = (text: string) => {
+  // Tách chuỗi thành các phần (năm, tháng, ngày)
+  const [year, month, day] = text.split("-");
+
+  // Định dạng lại ngày theo dạng dd/mm/yyyy
+  return `${day}/${month}/${year}`;
+}
+
+const formatPrice = (number: string) => {
+  return number.toLocaleString('en-US');
+}
+
 
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 @font-face {
   font-family: "Graphik Semibold";
   src: url(../assets/fonts/Graphik-Regular-Web.woff2);
@@ -628,5 +660,9 @@ const handleSelectNoService = () => {
   .themeText {
     color: #b38b7a;
   }
+}
+
+.checkInOutDate{
+  font-weight: 600;
 }
 </style>

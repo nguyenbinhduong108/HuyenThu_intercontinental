@@ -8,16 +8,9 @@
         width="225"
         height="87"
         title="InterContinental Hanoi Westlake"
-        class="white-logo" style="object-fit: cover;"
+        class="white-logo" style="object-fit: cover; width: 70px;"
       />
-      <img
-        src="../../public/assets/logo-dark.svg"
-        alt="InterContinental Hanoi Westlake Logo"
-        width="200"
-        height="80"
-        title="InterContinental Hanoi Westlake"
-        class="dark-logo"
-      />
+
     </a>
     <button class="booking-trigger button" @click="handleShowList">
       Danh sách phòng
@@ -27,7 +20,7 @@
     </button>
     
     <button class="booking-trigger button" @click="handleRegister">
-      {{user.code == 1000 ? user.result?.username : 'Đăng ký | Đăng nhập' }}
+      {{user.code == 1000 ? user.result?.userName : 'Đăng ký | Đăng nhập' }}
     </button>
     <div
       id="mobile-navigation"
@@ -259,7 +252,7 @@
       </form>
     </div>
   </article>
-  <article id="booking-home">
+  <!-- <article id="booking-home">
     <div class="center-column">
       <form action="/booking" method="post" target="_blank">
         <fieldset>
@@ -1418,7 +1411,7 @@
         </fieldset>
       </form>
     </div>
-  </article>
+  </article> -->
 
   //
   <section
@@ -2276,7 +2269,7 @@ const user = ref<any>({})
 
 onBeforeMount(() => {
   user.value = useUser.user;
-  console.log(125371253, user.value)
+  // console.log(125371253, user.value)
   // console.log(11111111111111,user.value);
 })
 
@@ -2323,7 +2316,7 @@ const handleRegister = () => {
 }
 
 const getRoom = async () => {
-  return await axios.get(`http://localhost:8081/hotelmaster/room/available-in-range?startDate=${checkin.value}&endDate=${checkout.value}`);
+  return await axios.get(`http://192.168.1.200:8081/hotelmaster/room/available-in-range?startDate=${checkin.value}&endDate=${checkout.value}`);
 }
 </script>
 
