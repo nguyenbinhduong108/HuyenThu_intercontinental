@@ -2316,7 +2316,7 @@ const handleRegister = () => {
 }
 
 const getRoom = async () => {
-  return await axios.get(`http://192.168.1.200:8081/hotelmaster/room/available-in-range?startDate=${checkin.value}&endDate=${checkout.value}`);
+  return await axios.get(`http://localhost:8081/hotelmaster/room/available-in-range?startDate=${checkin.value}&endDate=${checkout.value}`);
 }
 </script>
 

@@ -186,7 +186,7 @@ import { useRoomStore } from "@/stores/rooms";
 const useRoom = useRoomStore()
 
 onMounted(async () => {
-  rooms.value = (await axios.get(`http://192.168.1.200:8081/hotelmaster/booking/getbooking/${useUser.user.result.userId}`)).data
+  rooms.value = (await axios.get(`http://localhost:8081/hotelmaster/booking/getbooking/${useUser.user.result.userId}`)).data
   console.log(16238162386,rooms.value)
 } );
 

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 <template>
   <div class="close" @click="Close">
     <i class="fa-solid fa-xmark"></i>
@@ -120,7 +119,7 @@ const status = ref<string>("SignUp")
 
 const handleLogin = async () => {
   // console.log(userData.value.username, userData.value.password) 
-  const result = await axios.post(`http://192.168.1.200:8081/hotelmaster/auth/login`, 
+  const result = await axios.post(`http://localhost:8081/hotelmaster/auth/login`, 
     {
       "userName": userData.value.userName,
       "password": userData.value.password,
@@ -144,19 +143,26 @@ const handleSignUp = async () => {
     return;
   }
   else{
-    const result: any = await axios.post('http://192.168.1.200:8081/hotelmaster/auth/create', {
-      fullName: signupUser.value?.firstName + " " +signupUser.value?.lastName,
+    const result: any = await axios.post('http://localhost:8081/hotelmaster/auth/create', {
+      firstName: signupUser.value?.firstName,
+      lastName: signupUser.value?.lastName,
       email: signupUser.value?.email,
       phone: signupUser.value?.phone,
       password: signupUser.value?.password,
       username: signupUser.value?.username
-    }).then((response: any) => {
-      useUser.setUser(response.data);
-      router.push({name: 'home'})
-    }).catch((error: any) => {
+    }).then(respone => {
+      if(result.response.status   <= 400){
+        useUser.setUser(result.data);
+        router.push({name: 'home'})
+      }
+    }).catch(error => {
+      console.log("ahsdkjahsdkhaksdh")
       isShowDialog.value = true;
-
     })
+    
+    
+     
+
 
   }
 }

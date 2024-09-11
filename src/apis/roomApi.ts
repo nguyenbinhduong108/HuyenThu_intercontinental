@@ -1,18 +1,18 @@
 import axios from "axios";
 
-const baseApi = `http://192.168.1.200:8081/hotelmaster/room`;
+const baseApi = `http://localhost:8081/hotelmaster/room`;
 
 const roomApi = {
     getAllRoom: async () => {
         axios({
             method: 'get',
-            url: 'http://192.168.1.200:8081/hotelmaster/room',
+            url: 'http://localhost:8081/hotelmaster/room',
             responseType: 'stream'
           })
             .then(function (response) {
                 console.log('response', response)
             });
-        // const data = await axios.get('http://192.168.1.200:8081/hotelmaster/room');
+        // const data = await axios.get('http://localhost:8081/hotelmaster/room');
         // console.log("data",data)
         // return data;
     },

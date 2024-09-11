@@ -179,11 +179,11 @@ const handleCloseForm = () => {
 }
 
 const getRoom = async () => {
-  return await axios.get('http://192.168.1.200:8081/hotelmaster/room');
+  return await axios.get('http://localhost:8081/hotelmaster/room');
 }
 const useDates = useDatesStore();
 const getRoomWithDates = async () => {
-  return await axios.get(`http://192.168.1.200:8081/hotelmaster/room/available?checkInDate=${useDates.checkIn}&checkOutDate=${useDates.checkOut}`);
+  return await axios.get(`http://localhost:8081/hotelmaster/room/available?checkInDate=${useDates.checkIn}&checkOutDate=${useDates.checkOut}`);
 }
 
 
@@ -198,7 +198,7 @@ onMounted(async () => {
     rooms.value = (await getRoomWithDates()).data;
   } 
   // axios
-  //     .get(`http://192.168.1.200:8081/hotelmaster/room/available?checkInDate=${useDates.checkIn}&checkOutDate=${useDates.checkOut}`)
+  //     .get(`http://localhost:8081/hotelmaster/room/available?checkInDate=${useDates.checkIn}&checkOutDate=${useDates.checkOut}`)
   //     .then(response => (
   //       console.log("data respon", response)
   //     ))
@@ -209,17 +209,17 @@ const handleBackToTop = () => {
 }
 
 
-const handleBooking = () => {
-  isShowDialog.value = true;
-  axios.post('http://192.168.1.200:8081/hotelmaster/booking', {
-        "username": null,
-        "roomNumber": "101",
-        "checkInDate": "2024-02-02",
-        "checkOutDate": "2024-02-02",
-        "totalPrice": 10000,
-        "bookingStatus": "BOOKED"
-  })
-}
+// const handleBooking = () => {
+//   isShowDialog.value = true;
+//   axios.post('http://localhost:8081/hotelmaster/booking', {
+//         "username": null,
+//         "roomNumber": "101",
+//         "checkInDate": "2024-02-02",
+//         "checkOutDate": "2024-02-02",
+//         "totalPrice": 10000,
+//         "bookingStatus": "BOOKED"
+//   })
+// }
 </script>
 
 <style lang="scss" scoped>

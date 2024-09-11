@@ -132,7 +132,7 @@
                     <div data-testid="strikeThroughPriceSID" class="ng-star-inserted"> Từ <span
                         class="strikeThrough">179</span></div>
                     <div class="total-price d-flex flex-row ng-star-inserted"><span
-                        class="cash ng-star-inserted">147</span><span class="currency">VND</span>
+                        class="cash ng-star-inserted">{{ formatPrice(price) }}</span><span class="currency">VND</span>
                     </div><span data-testid="guest-count-info" class="perNight ng-star-inserted"> mỗi đêm
                     </span>
                   </div>
@@ -217,7 +217,7 @@
                     <div data-testid="strikeThroughPriceSID" class="ng-star-inserted"> Từ <span
                         class="strikeThrough">199</span></div>
                     <div class="total-price d-flex flex-row ng-star-inserted"><span
-                        class="cash ng-star-inserted">193</span><span class="currency">VND</span>
+                        class="cash ng-star-inserted">{{ formatPrice(price + 100000) }}</span><span class="currency">VND</span>
                     </div><span data-testid="guest-count-info" class="perNight ng-star-inserted"> mỗi đêm
                     </span>
                   </div>
@@ -237,6 +237,9 @@
 <script setup lang="ts">
 import axios from 'axios';
 import { onMounted, ref } from 'vue';
+import { useUserStore } from '@/stores/user'
+import { useDatesStore } from '@/stores/dates'
+import { usePaymentStore } from '@/stores/payment'
 
 const props = defineProps({
   id: String,
@@ -269,10 +272,23 @@ const room = ref<any>({
   id: '',
 })
 
+const payment = ref<any>({
+  userId: '',
+  roomNumber: '',
+  userName: '',
+  checkInDate: '',
+  checkOutDate: '',
+  totalPrice: '',
+  email: '',
+  adress: '',
+  phoneNumer: '',
+  serviceId: []
+})
+
 const isShowMore = ref<boolean>(false)
 
 const getRoom = async (id: any) => {
-  return await axios.get(`http://192.168.1.200:8081/hotelmaster/room/${id}`);
+  return await axios.get(`http://localhost:8081/hotelmaster/room/${id}`);
 }
 
 onMounted(async () => {
@@ -289,15 +305,36 @@ const handleShowMore = () => {
 }
 
 const useBooking = useBookingStore();
+const useUser : any = useUserStore();
+const useDate = useDatesStore();
+const usePayment = usePaymentStore();
 
 const handleSelectWithService = () => {
-  useBooking.getPrice(147 + 20);
+  payment.value.userId = useUser.user.result.userId
+  payment.value.roomNumber = room.value.roomNumber
+  payment.value.userName = useUser.user.result.userName
+  payment.value.checkInDate = useDate.checkIn
+  payment.value.checkOutDate = useDate.checkOut
+  payment.value.totalPrice = useDate.total * (Number(props.price) + 100000)
+  payment.value.serviceId = [1]
+
+  usePayment.getInfoPayment(payment.value)
+
   router.push({ name: "payment" });
 
 }
 
 const handleSelectNoService = () => {
-  useBooking.getPrice(147);
+  payment.value.userId = useUser.user.result.userId
+  payment.value.roomNumber = room.value.roomNumber
+  payment.value.userName = useUser.user.result.userName
+  payment.value.checkInDate = useDate.checkIn
+  payment.value.checkOutDate = useDate.checkOut
+  payment.value.totalPrice = useDate.total * Number(props.price)
+  payment.value.serviceId = []
+
+  usePayment.getInfoPayment(payment.value)
+
   router.push({ name: "payment" });
 }
 
