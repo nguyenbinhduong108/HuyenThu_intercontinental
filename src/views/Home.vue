@@ -2,14 +2,9 @@
   <header id="header">
     <a href="#content" id="skip-to-content">Skip to Content (Press Enter)</a>
     <a class="logo" href="/">
-      <img
-        src="../../public/assets/86-Photoroom (2) (1).png"
-        alt="InterContinental Hanoi Westlake Logo"
-        width="225"
-        height="87"
-        title="InterContinental Hanoi Westlake"
-        class="white-logo" style="object-fit: cover; width: 70px;"
-      />
+      <img src="../../public/assets/86-Photoroom (2) (1).png" alt="InterContinental Hanoi Westlake Logo" width="225"
+        height="87" title="InterContinental Hanoi Westlake" class="white-logo"
+        style="object-fit: cover; width: 70px;" />
 
     </a>
     <button class="booking-trigger button" @click="handleShowList">
@@ -18,19 +13,16 @@
     <button class="booking-trigger button" @click="handleShowBooking">
       Đặt phòng ngay
     </button>
-    
+
     <button class="booking-trigger button" @click="handleRegister">
-      {{user.code == 1000 ? user.result?.userName : 'Đăng ký | Đăng nhập' }}
+      {{ user.code == 1000 ? user.result?.userName : 'Đăng ký | Đăng nhập' }}
     </button>
-    <div
-      id="mobile-navigation"
-      class="scrolling-wrapper"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Popup Corporate Menu"
-    >
+    <div id="mobile-navigation" class="scrolling-wrapper" role="dialog" aria-modal="true"
+      aria-label="Popup Corporate Menu">
       <div class="main-menu-wrapper">
-        <nav class="top-menu" aria-label="Side Top Menu"><ul></ul></nav>
+        <nav class="top-menu" aria-label="Side Top Menu">
+          <ul></ul>
+        </nav>
         <nav class="main-menu" aria-label="Side Main Menu">
           <ul class="menu level-1">
             <li class="parent">
@@ -74,9 +66,7 @@
                   <a href="/vn/dining/diplomat-lounge">Diplomat Lounge</a>
                 </li>
                 <li>
-                  <a href="/vn/dining/ihg-dining-program"
-                    >IHG One Rewards Dining Privileges</a
-                  >
+                  <a href="/vn/dining/ihg-dining-program">IHG One Rewards Dining Privileges</a>
                 </li>
               </ul>
             </li>
@@ -89,26 +79,16 @@
               <ul class="menu level-2 submenu">
                 <li><a href="/vn/meetings-events/rfp">Đăng ký Sự kiện</a></li>
                 <li>
-                  <a href="/vn/meetings-events/journey-to-tomorrow"
-                    >Journey To Tomorrow</a
-                  >
+                  <a href="/vn/meetings-events/journey-to-tomorrow">Journey To Tomorrow</a>
                 </li>
                 <li>
-                  <a href="/vn/meetings-events/incredible-proposals-package"
-                    >Gói Cầu Hôn “Say Yes at Sunset”!</a
-                  >
+                  <a href="/vn/meetings-events/incredible-proposals-package">Gói Cầu Hôn “Say Yes at Sunset”!</a>
                 </li>
                 <li>
-                  <a
-                    href="/vn/meetings-events/incredible-first-birthdays-package"
-                    >Gói Tiệc Sinh Nhật Một Tuổi</a
-                  >
+                  <a href="/vn/meetings-events/incredible-first-birthdays-package">Gói Tiệc Sinh Nhật Một Tuổi</a>
                 </li>
                 <li>
-                  <a
-                    href="/vn/meetings-events/incredible-longevity-celebrations-package"
-                    >Gói Tiệc Mừng Thọ</a
-                  >
+                  <a href="/vn/meetings-events/incredible-longevity-celebrations-package">Gói Tiệc Mừng Thọ</a>
                 </li>
               </ul>
             </li>
@@ -140,88 +120,42 @@
     </div>
   </header>
 
-  <div
-    id="photos"
-    role="region"
-    aria-roledescription="carousel"
-    aria-label="Top Image Slideshow"
-  >
+  <div id="photos" role="region" aria-roledescription="carousel" aria-label="Top Image Slideshow">
     <div class="slideshow">
       <div class="slideshow-wrapper">
         <figure class="slide">
           <picture>
-            <source
-              type="image/webp"
-              media="(max-width: 420px)"
-              srcset="
+            <source type="image/webp" media="(max-width: 420px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64dc8d1e29a41.jpg/420x830/fit/80/a60b7dd5c0b3bc895cebb471fcdfe8a7.webp
-              "
-            />
-            <source
-              type="image/webp"
-              media="(max-width: 767px)"
-              srcset="
+              " />
+            <source type="image/webp" media="(max-width: 767px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64dc8d1e29a41.jpg/767x600/fit/80/af6bc0471d195b97bbe6d1b682c5a484.webp
-              "
-            />
-            <source
-              type="image/webp"
-              media="(max-width: 1280px)"
-              srcset="
+              " />
+            <source type="image/webp" media="(max-width: 1280px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64dc8d1e29a41.jpg/1280x768/fit/80/3379e1cc56efd8b98b833901133bf604.webp
-              "
-            />
-            <source
-              type="image/webp"
-              srcset="
+              " />
+            <source type="image/webp" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64dc8d1e29a41.jpg/1920x1080/fit/80/2d25496641e30753045c483a288c0b89.webp
-              "
-            />
-            <source
-              type="image/jpeg"
-              media="(max-width: 420px)"
-              srcset="
+              " />
+            <source type="image/jpeg" media="(max-width: 420px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64dc8d1e29a41.jpg/420x830/fit/80/357f25353d602dd5d1ca38c631a77cb7.jpg
-              "
-            />
-            <source
-              type="image/jpeg"
-              media="(max-width: 767px)"
-              srcset="
+              " />
+            <source type="image/jpeg" media="(max-width: 767px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64dc8d1e29a41.jpg/767x600/fit/80/04d1016e002a9832bdc5eaefd296cf39.jpg
-              "
-            />
-            <source
-              type="image/jpeg"
-              media="(max-width: 1280px)"
-              srcset="
+              " />
+            <source type="image/jpeg" media="(max-width: 1280px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64dc8d1e29a41.jpg/1280x768/fit/80/244bd16d7ec53c033d7d0252689722ce.jpg
-              "
-            />
-            <source
-              type="image/jpeg"
-              srcset="
+              " />
+            <source type="image/jpeg" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64dc8d1e29a41.jpg/1920x1080/fit/80/393f8b151ff2281dbaa043b4f529f36d.jpg
-              "
-            />
-            <img
-              class="slide-image"
+              " />
+            <img class="slide-image"
               src="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64dc8d1e29a41.jpg/1920x1080/fit/80/393f8b151ff2281dbaa043b4f529f36d.jpg"
-              style="object-position: 50% 50%"
-              alt="Shape"
-              height="1080"
-              width="1920"
-            />
+              style="object-position: 50% 50%" alt="Shape" height="1080" width="1920" />
           </picture>
-          <video
-            class="video muted vimeo-video-tag video-background"
+          <video class="video muted vimeo-video-tag video-background"
             src="https://player.vimeo.com/progressive_redirect/download/856698772/rendition/1080p/0821%281%29%20%281080p%29.mp4?loc=external&amp;signature=ca9ee00df1a0ea61ac3dd31072eaca589a4afee208eb7a1afd9f155091c0931e"
-            type="video/mp4"
-            autoplay
-            loop
-            muted
-            playsinline
-          ></video>
+            type="video/mp4" autoplay loop muted playsinline></video>
         </figure>
       </div>
     </div>
@@ -237,17 +171,12 @@
           <legend>Đặt phòng</legend>
           <div class="column dates">
             <label>Checkin:</label>
-            <input type="date" v-model="checkin" @change="selectCheckin"/>
+            <input type="date" v-model="checkin" @change="selectCheckin" />
             <label>Checkout:</label>
-            <input type="date" v-model="checkout" @change="selectCheckout"
-          </div>
-          <button
-            @click="handleBooking"
-            class="button"
-            style="width: 100%; margin-top: 20px"
-          >
-            Kiểm tra tình trạng phòng
-          </button>
+            <input type="date" v-model="checkout" @change="selectCheckout" </div>
+            <button @click="handleBooking" class="button" style="width: 100%; margin-top: 20px">
+              Kiểm tra tình trạng phòng
+            </button>
         </fieldset>
       </form>
     </div>
@@ -1414,77 +1343,40 @@
   </article> -->
 
   //
-  <section
-    id="content"
-    class="fade-on-scroll visible"
-    role="main"
-    tabindex="-1"
-  >
+  <section id="content" class="fade-on-scroll visible" role="main" tabindex="-1">
     <div id="main-content" class="center-column has-thumb">
       <div class="home-wrapper">
         <div class="home-thumbnail">
           <picture>
-            <source
-              type="image/webp"
-              media="(max-width: 420px)"
-              srcset="
+            <source type="image/webp" media="(max-width: 420px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/400x200/fit/80/728fc6b645c8bda4661cc993ed4faef0.webp
-              "
-            />
-            <source
-              type="image/webp"
-              media="(max-width: 767px)"
-              srcset="
+              " />
+            <source type="image/webp" media="(max-width: 767px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/750x400/fit/80/ff62097d346868ecbbacbd6e62601118.webp
-              "
-            />
-            <source
-              type="image/webp"
-              media="(max-width: 1280px)"
-              srcset="
+              " />
+            <source type="image/webp" media="(max-width: 1280px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/700x1100/fit/80/c718db9cbf4f4e65af575ab7482c0852.webp
-              "
-            />
-            <source
-              type="image/webp"
-              srcset="
+              " />
+            <source type="image/webp" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/800x1200/fit/80/96f79d0c12e19b211075023beb706b01.webp
-              "
-            />
-            <source
-              type="image/jpeg"
-              media="(max-width: 420px)"
-              srcset="
+              " />
+            <source type="image/jpeg" media="(max-width: 420px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/400x200/fit/80/bb0c65abed9b5f90bc5172be7b47e818.jpg
-              "
-            />
-            <source
-              type="image/jpeg"
-              media="(max-width: 767px)"
-              srcset="
+              " />
+            <source type="image/jpeg" media="(max-width: 767px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/750x400/fit/80/adf26866faa7b03ef230e040a3555f5f.jpg
-              "
-            />
-            <source
-              type="image/jpeg"
-              media="(max-width: 1280px)"
-              srcset="
+              " />
+            <source type="image/jpeg" media="(max-width: 1280px)" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/700x1100/fit/80/f9ae149104f21d66b5c5ae1086a5c08f.jpg
-              "
-            />
-            <source
-              type="image/jpeg"
-              srcset="
+              " />
+            <source type="image/jpeg" srcset="
                 //d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e37821208ab.JPG/800x1200/fit/80/c76804088e07eec0e36b86779534a340.jpg
-              "
-            />
-            <img
-              class="object-fit lazy-load"
+              " />
+            <img class="object-fit lazy-load"
               data-src="https://d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/imagepool/63e37821208ab.JPG"
               alt="InterContinental Hanoi Westlake Main-content Section Image 520"
               src="https://d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/imagepool/63e37821208ab.JPG"
-              data-loaded="true"
-            />
+              data-loaded="true" />
           </picture>
         </div>
         <div class="home-content-wrapper">
@@ -1517,14 +1409,11 @@
         <div class="section-block-list">
           <article class="item-block">
             <div class="thumbnail-wrap">
-              <div
-                class="thumbnail lazy-load"
+              <div class="thumbnail lazy-load"
                 data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e380bb1b8b6.jpg/620x415/fit;c:895,1283,5503,4366/80/07ecdbd20d1af5f1e10a8fe9204d2c90.jpg"
-                data-loaded="true"
-                style="
+                data-loaded="true" style="
                   background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e380bb1b8b6.jpg/620x415/fit;c:895,1283,5503,4366/80/07ecdbd20d1af5f1e10a8fe9204d2c90.jpg');
-                "
-              ></div>
+                "></div>
             </div>
             <div class="section-block-content page-content">
               <h3 class="sb-title">Sunset Bar</h3>
@@ -1544,14 +1433,11 @@
           </article>
           <article class="item-block">
             <div class="thumbnail-wrap">
-              <div
-                class="thumbnail lazy-load"
+              <div class="thumbnail lazy-load"
                 data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e462e498a65.jpg/620x415/fit;c:440,875,5417,4205/80/c073dd0cfd27ea62e15cfad5e7bcc155.jpg"
-                data-loaded="true"
-                style="
+                data-loaded="true" style="
                   background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e462e498a65.jpg/620x415/fit;c:440,875,5417,4205/80/c073dd0cfd27ea62e15cfad5e7bcc155.jpg');
-                "
-              ></div>
+                "></div>
             </div>
             <div class="section-block-content page-content">
               <h3 class="sb-title">Nhà hàng Café du Lac</h3>
@@ -1570,14 +1456,11 @@
           </article>
           <article class="item-block">
             <div class="thumbnail-wrap">
-              <div
-                class="thumbnail lazy-load"
+              <div class="thumbnail lazy-load"
                 data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e613e1798f5.jpg/620x415/fit/80/f5e909fdb54d3c9558b3a25adc2d9f48.jpg"
-                data-loaded="true"
-                style="
+                data-loaded="true" style="
                   background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e613e1798f5.jpg/620x415/fit/80/f5e909fdb54d3c9558b3a25adc2d9f48.jpg');
-                "
-              ></div>
+                "></div>
             </div>
             <div class="section-block-content page-content">
               <h3 class="sb-title">Nhà hàng Milan</h3>
@@ -1595,14 +1478,11 @@
           </article>
           <article class="item-block">
             <div class="thumbnail-wrap">
-              <div
-                class="thumbnail lazy-load"
+              <div class="thumbnail lazy-load"
                 data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e60df068fe7.jpg/620x415/fit/80/3dba5a1b176a7c69e3d794ae8af70728.jpg"
-                data-loaded="true"
-                style="
+                data-loaded="true" style="
                   background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e60df068fe7.jpg/620x415/fit/80/3dba5a1b176a7c69e3d794ae8af70728.jpg');
-                "
-              ></div>
+                "></div>
             </div>
             <div class="section-block-content page-content">
               <h3 class="sb-title">Nhà hàng Sài Gòn</h3>
@@ -1623,14 +1503,11 @@
           </article>
           <article class="item-block">
             <div class="thumbnail-wrap">
-              <div
-                class="thumbnail lazy-load"
+              <div class="thumbnail lazy-load"
                 data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e6142f685e7.jpg/620x415/fit/80/cddd05b2a6c0301fb2ecea0652cbf614.jpg"
-                data-loaded="true"
-                style="
+                data-loaded="true" style="
                   background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e6142f685e7.jpg/620x415/fit/80/cddd05b2a6c0301fb2ecea0652cbf614.jpg');
-                "
-              ></div>
+                "></div>
             </div>
             <div class="section-block-content page-content">
               <h3 class="sb-title">Diplomat Lounge</h3>
@@ -1648,14 +1525,11 @@
           </article>
           <article class="item-block">
             <div class="thumbnail-wrap">
-              <div
-                class="thumbnail lazy-load"
+              <div class="thumbnail lazy-load"
                 data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e9b9d1ba6c6.jpg/620x415/fit/80/43c61744435e0d724134b1fbc1dfc096.jpg"
-                data-loaded="true"
-                style="
+                data-loaded="true" style="
                   background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/63e9b9d1ba6c6.jpg/620x415/fit/80/43c61744435e0d724134b1fbc1dfc096.jpg');
-                "
-              ></div>
+                "></div>
             </div>
             <div class="section-block-content page-content">
               <h3 class="sb-title">Penfolds Lounge</h3>
@@ -1681,25 +1555,16 @@
         </div>
         <div class="featured-promos-list">
           <div class="slideshow swiper-container-horizontal">
-            <div
-              class="slideshow-wrapper swiper-wrapper"
-              tabindex="-1"
-              style="
+            <div class="slideshow-wrapper swiper-wrapper" tabindex="-1" style="
                 transition-duration: 0ms;
                 transform: translate3d(-2308.33px, 0px, 0px);
-              "
-            >
-              <article
-                class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
-                data-swiper-slide-index="1"
-                style="width: 436.667px; margin-right: 25px"
-                aria-hidden="true"
-              >
+              ">
+              <article class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                data-swiper-slide-index="1" style="width: 436.667px; margin-right: 25px" aria-hidden="true">
                 <div class="thumbnail-wrap">
-                  <div
-                    class="thumbnail lazy-load"
-                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab3c6f200ea.jpeg/800x1000/fit/80/5f9d3ccecfc1a54f32807415c3e61242.jpg"
-                  ></div>
+                  <div class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab3c6f200ea.jpeg/800x1000/fit/80/5f9d3ccecfc1a54f32807415c3e61242.jpg">
+                  </div>
                 </div>
                 <div class="featured-promo-content page-content">
                   <h3 class="fp-title">
@@ -1721,17 +1586,12 @@
                   > -->
                 </div>
               </article>
-              <article
-                class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
-                data-swiper-slide-index="2"
-                style="width: 436.667px; margin-right: 25px"
-                aria-hidden="true"
-              >
+              <article class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                data-swiper-slide-index="2" style="width: 436.667px; margin-right: 25px" aria-hidden="true">
                 <div class="thumbnail-wrap">
-                  <div
-                    class="thumbnail lazy-load"
-                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab39d44f3c3.jpeg/800x1000/fit/80/9624fe89be84ac73254555ef9e44aacf.jpg"
-                  ></div>
+                  <div class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab39d44f3c3.jpeg/800x1000/fit/80/9624fe89be84ac73254555ef9e44aacf.jpg">
+                  </div>
                 </div>
                 <div class="featured-promo-content page-content">
                   <h3 class="fp-title">Thực đơn đặc biệt Tháng Tám - Cốm</h3>
@@ -1750,17 +1610,12 @@
                   > -->
                 </div>
               </article>
-              <article
-                class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
-                data-swiper-slide-index="3"
-                style="width: 436.667px; margin-right: 25px"
-                aria-hidden="true"
-              >
+              <article class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next"
+                data-swiper-slide-index="3" style="width: 436.667px; margin-right: 25px" aria-hidden="true">
                 <div class="thumbnail-wrap">
-                  <div
-                    class="thumbnail lazy-load"
-                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64523763861b2.jpg/800x1000/fit;c:409,0,1149,1281/80/c3ec9256220216b6ad918d415a22bed5.jpg"
-                  ></div>
+                  <div class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64523763861b2.jpg/800x1000/fit;c:409,0,1149,1281/80/c3ec9256220216b6ad918d415a22bed5.jpg">
+                  </div>
                 </div>
                 <div class="featured-promo-content page-content">
                   <h3 class="fp-title">Gói nghỉ dưỡng Je T’aime</h3>
@@ -1778,17 +1633,12 @@
                   > -->
                 </div>
               </article>
-              <article
-                class="item-slide swiper-slide"
-                data-swiper-slide-index="0"
-                style="width: 436.667px; margin-right: 25px"
-                aria-hidden="true"
-              >
+              <article class="item-slide swiper-slide" data-swiper-slide-index="0"
+                style="width: 436.667px; margin-right: 25px" aria-hidden="true">
                 <div class="thumbnail-wrap">
-                  <div
-                    class="thumbnail lazy-load"
-                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/6682616d5f5a2.jpg/800x1000/fit;c:636,0,1794,2000/80/d9c35b0107370171cef696cadedaea9b.jpg"
-                  ></div>
+                  <div class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/6682616d5f5a2.jpg/800x1000/fit;c:636,0,1794,2000/80/d9c35b0107370171cef696cadedaea9b.jpg">
+                  </div>
                 </div>
                 <div class="featured-promo-content page-content">
                   <h3 class="fp-title">
@@ -1800,26 +1650,16 @@
                     trị văn hóa sâu sắc và lời chúc ý nghĩa cho một mùa Trung
                     thu vẹn tròn.
                   </p>
-                  <a
-                    href="https://hanoi.intercontinental.com/vn/special-offers/mooncake-collection-2024"
-                    class="view-link text-link"
-                    target="_blank"
-                    tabindex="-1"
-                    >Tìm hiểu thêm</a
-                  >
+                  <a href="https://hanoi.intercontinental.com/vn/special-offers/mooncake-collection-2024"
+                    class="view-link text-link" target="_blank" tabindex="-1">Tìm hiểu thêm</a>
                 </div>
               </article>
-              <article
-                class="item-slide swiper-slide swiper-slide-prev"
-                data-swiper-slide-index="1"
-                style="width: 436.667px; margin-right: 25px"
-                aria-hidden="true"
-              >
+              <article class="item-slide swiper-slide swiper-slide-prev" data-swiper-slide-index="1"
+                style="width: 436.667px; margin-right: 25px" aria-hidden="true">
                 <div class="thumbnail-wrap">
-                  <div
-                    class="thumbnail lazy-load"
-                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab3c6f200ea.jpeg/800x1000/fit/80/5f9d3ccecfc1a54f32807415c3e61242.jpg"
-                  ></div>
+                  <div class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab3c6f200ea.jpeg/800x1000/fit/80/5f9d3ccecfc1a54f32807415c3e61242.jpg">
+                  </div>
                 </div>
                 <div class="featured-promo-content page-content">
                   <h3 class="fp-title">
@@ -1841,17 +1681,12 @@
                   > -->
                 </div>
               </article>
-              <article
-                class="item-slide swiper-slide swiper-slide-active"
-                data-swiper-slide-index="2"
-                style="width: 436.667px; margin-right: 25px"
-                aria-hidden="false"
-              >
+              <article class="item-slide swiper-slide swiper-slide-active" data-swiper-slide-index="2"
+                style="width: 436.667px; margin-right: 25px" aria-hidden="false">
                 <div class="thumbnail-wrap">
-                  <div
-                    class="thumbnail lazy-load"
-                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab39d44f3c3.jpeg/800x1000/fit/80/9624fe89be84ac73254555ef9e44aacf.jpg"
-                  ></div>
+                  <div class="thumbnail lazy-load"
+                    data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab39d44f3c3.jpeg/800x1000/fit/80/9624fe89be84ac73254555ef9e44aacf.jpg">
+                  </div>
                 </div>
                 <div class="featured-promo-content page-content">
                   <h3 class="fp-title">Thực đơn đặc biệt Tháng Tám - Cốm</h3>
@@ -1869,21 +1704,14 @@
                   > -->
                 </div>
               </article>
-              <article
-                class="item-slide swiper-slide swiper-slide-next"
-                data-swiper-slide-index="3"
-                style="width: 436.667px; margin-right: 25px"
-                aria-hidden="true"
-              >
+              <article class="item-slide swiper-slide swiper-slide-next" data-swiper-slide-index="3"
+                style="width: 436.667px; margin-right: 25px" aria-hidden="true">
                 <div class="thumbnail-wrap">
-                  <div
-                    class="thumbnail lazy-load"
+                  <div class="thumbnail lazy-load"
                     data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64523763861b2.jpg/800x1000/fit;c:409,0,1149,1281/80/c3ec9256220216b6ad918d415a22bed5.jpg"
-                    data-loaded="true"
-                    style="
+                    data-loaded="true" style="
                       background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/64523763861b2.jpg/800x1000/fit;c:409,0,1149,1281/80/c3ec9256220216b6ad918d415a22bed5.jpg');
-                    "
-                  ></div>
+                    "></div>
                 </div>
                 <div class="featured-promo-content page-content">
                   <h3 class="fp-title">Gói nghỉ dưỡng Je T’aime</h3>
@@ -1900,21 +1728,14 @@
                   > -->
                 </div>
               </article>
-              <article
-                class="item-slide swiper-slide swiper-slide-duplicate"
-                data-swiper-slide-index="0"
-                style="width: 436.667px; margin-right: 25px"
-                aria-hidden="true"
-              >
+              <article class="item-slide swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"
+                style="width: 436.667px; margin-right: 25px" aria-hidden="true">
                 <div class="thumbnail-wrap">
-                  <div
-                    class="thumbnail lazy-load"
+                  <div class="thumbnail lazy-load"
                     data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/6682616d5f5a2.jpg/800x1000/fit;c:636,0,1794,2000/80/d9c35b0107370171cef696cadedaea9b.jpg"
-                    data-loaded="true"
-                    style="
+                    data-loaded="true" style="
                       background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/6682616d5f5a2.jpg/800x1000/fit;c:636,0,1794,2000/80/d9c35b0107370171cef696cadedaea9b.jpg');
-                    "
-                  ></div>
+                    "></div>
                 </div>
                 <div class="featured-promo-content page-content">
                   <h3 class="fp-title">
@@ -1934,21 +1755,14 @@
                   > -->
                 </div>
               </article>
-              <article
-                class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
-                data-swiper-slide-index="1"
-                style="width: 436.667px; margin-right: 25px"
-                aria-hidden="true"
-              >
+              <article class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                data-swiper-slide-index="1" style="width: 436.667px; margin-right: 25px" aria-hidden="true">
                 <div class="thumbnail-wrap">
-                  <div
-                    class="thumbnail lazy-load"
+                  <div class="thumbnail lazy-load"
                     data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab3c6f200ea.jpeg/800x1000/fit/80/5f9d3ccecfc1a54f32807415c3e61242.jpg"
-                    data-loaded="true"
-                    style="
+                    data-loaded="true" style="
                       background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab3c6f200ea.jpeg/800x1000/fit/80/5f9d3ccecfc1a54f32807415c3e61242.jpg');
-                    "
-                  ></div>
+                    "></div>
                 </div>
                 <div class="featured-promo-content page-content">
                   <h3 class="fp-title">
@@ -1970,21 +1784,14 @@
                   > -->
                 </div>
               </article>
-              <article
-                class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
-                data-swiper-slide-index="2"
-                style="width: 436.667px; margin-right: 25px"
-                aria-hidden="true"
-              >
+              <article class="item-slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                data-swiper-slide-index="2" style="width: 436.667px; margin-right: 25px" aria-hidden="true">
                 <div class="thumbnail-wrap">
-                  <div
-                    class="thumbnail lazy-load"
+                  <div class="thumbnail lazy-load"
                     data-background-image="//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab39d44f3c3.jpeg/800x1000/fit/80/9624fe89be84ac73254555ef9e44aacf.jpg"
-                    data-loaded="true"
-                    style="
+                    data-loaded="true" style="
                       background-image: url('//d3rx7ba35c2ox5.cloudfront.net/-1166611616/cms/cache/v2/66ab39d44f3c3.jpeg/800x1000/fit/80/9624fe89be84ac73254555ef9e44aacf.jpg');
-                    "
-                  ></div>
+                    "></div>
                 </div>
                 <div class="featured-promo-content page-content">
                   <h3 class="fp-title">Thực đơn đặc biệt Tháng Tám - Cốm</h3>
@@ -2004,11 +1811,7 @@
                 </div>
               </article>
             </div>
-            <span
-              class="swiper-notification"
-              aria-live="assertive"
-              aria-atomic="true"
-            ></span>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
           </div>
         </div>
         <!-- <div class="featured-promos-button-wrapper">
@@ -2025,63 +1828,36 @@
         <ul>
           <li><a href="/vn/contact-us">Liên hệ chúng tôi</a></li>
           <li>
-            <a
-              href="https://www.ihg.com/content/us/en/customer-care/privacy-and-cookie-center"
-              target="_blank"
-              >Bảo mật và Điều khoản</a
-            >
+            <a href="https://www.ihg.com/content/us/en/customer-care/privacy-and-cookie-center" target="_blank">Bảo mật
+              và Điều khoản</a>
           </li>
           <li>
-            <a
-              href="https://www.tripadvisor.com.sg/Hotel_Review-g293924-d815139-Reviews-InterContinental_Hanoi_Westlake-Hanoi.html"
-              target="_blank"
-              >Đánh giá từ Khách hàng</a
-            >
+            <a href="https://www.tripadvisor.com.sg/Hotel_Review-g293924-d815139-Reviews-InterContinental_Hanoi_Westlake-Hanoi.html"
+              target="_blank">Đánh giá từ Khách hàng</a>
           </li>
           <li><a href="/vn/owner-information">Thông tin Chủ sở hửu</a></li>
           <li>
-            <a href="/vn/personal-data-statement"
-              >Chính sách bảo mật thông tin</a
-            >
+            <a href="/vn/personal-data-statement">Chính sách bảo mật thông tin</a>
           </li>
           <li>
-            <a
-              href="https://www.ihg.com/intercontinental/hotels/us/en/reservation"
-              target="_blank"
-              >InterContinental.com</a
-            >
+            <a href="https://www.ihg.com/intercontinental/hotels/us/en/reservation"
+              target="_blank">InterContinental.com</a>
           </li>
         </ul>
       </nav>
       <div class="footer-flex">
         <div class="footer-block col-1">
           <a class="logo-icon" href="/" title="InterContinental Hanoi Westlake">
-            <img
-              class="lazy-load"
-              data-src="../../public/assets/logo-dark.svg"
-              width="238"
-              height="92"
-              alt="InterContinental Hanoi Westlake"
-              src="../../public/assets/logo-dark.svg"
-              data-loaded="true"
-          /></a>
-          <div
-            id="IWSfrContainer"
-            style="font-family: Arial, Helvetica, sans-serif"
-          ></div>
-          <small class="copyright"
-            >© Copyright 2024. All rights reserved. Huyền Thu Hanoi
-            Westlake</small
-          >
+            <img class="lazy-load" data-src="../../public/assets/logo-dark.svg" width="238" height="92"
+              alt="InterContinental Hanoi Westlake" src="../../public/assets/logo-dark.svg" data-loaded="true" /></a>
+          <div id="IWSfrContainer" style="font-family: Arial, Helvetica, sans-serif"></div>
+          <small class="copyright">© Copyright 2024. All rights reserved. Huyền Thu Hanoi
+            Westlake</small>
         </div>
         <div class="footer-block col-2">
           <ul class="socials">
             <li>
-              <a
-                class="facebook"
-                href="https://www.facebook.com/intercontinentalhanoiwestlake"
-                target="_blank"
-              >
+              <a class="facebook" href="https://www.facebook.com/intercontinentalhanoiwestlake" target="_blank">
                 facebook
                 <svg width="178px" height="60px">
                   <use xlink:href="#facebook"></use>
@@ -2089,11 +1865,7 @@
               </a>
             </li>
             <li>
-              <a
-                class="twitter"
-                href="https://twitter.com/ichanoiwestlake"
-                target="_blank"
-              >
+              <a class="twitter" href="https://twitter.com/ichanoiwestlake" target="_blank">
                 twitter
                 <svg width="178px" height="60px">
                   <use xlink:href="#twitter"></use>
@@ -2101,11 +1873,7 @@
               </a>
             </li>
             <li>
-              <a
-                class="instagram"
-                href="http://instagram.com/interconhanoiwestlake"
-                target="_blank"
-              >
+              <a class="instagram" href="http://instagram.com/interconhanoiwestlake" target="_blank">
                 instagram
                 <svg width="178px" height="60px">
                   <use xlink:href="#instagram"></use>
@@ -2113,11 +1881,8 @@
               </a>
             </li>
             <li>
-              <a
-                class="linkedin"
-                href="https://www.linkedin.com/company/intercontinental-hanoi-westlake"
-                target="_blank"
-              >
+              <a class="linkedin" href="https://www.linkedin.com/company/intercontinental-hanoi-westlake"
+                target="_blank">
                 linkedin
                 <svg width="178px" height="60px">
                   <use xlink:href="#linkedin"></use>
@@ -2125,11 +1890,7 @@
               </a>
             </li>
             <li>
-              <a
-                class="youtube"
-                href="https://www.youtube.com/channel/UCJ6JdsM9pmcPrzigHC7mfYg"
-                target="_blank"
-              >
+              <a class="youtube" href="https://www.youtube.com/channel/UCJ6JdsM9pmcPrzigHC7mfYg" target="_blank">
                 youtube
                 <svg width="178px" height="60px">
                   <use xlink:href="#youtube"></use>
@@ -2137,11 +1898,9 @@
               </a>
             </li>
             <li>
-              <a
-                class="tripadvisor"
+              <a class="tripadvisor"
                 href="https://www.tripadvisor.com/Hotel_Review-g293924-d815139-Reviews-InterContinental_Hanoi_Westlake-Hanoi.html"
-                target="_blank"
-              >
+                target="_blank">
                 tripadvisor
                 <svg width="178px" height="60px">
                   <use xlink:href="#tripadvisor"></use>
@@ -2151,84 +1910,63 @@
           </ul>
           <article id="footer-contacts">
             <p class="footer-address">
-              <svg><use xlink:href="#pointer"></use></svg>
+              <svg>
+                <use xlink:href="#pointer"></use>
+              </svg>
               <span>5 Tu Hoa street, Tay Ho district, Vietnam</span>
             </p>
             <p class="footer-phone">
-              <svg><use xlink:href="#phone"></use></svg>
+              <svg>
+                <use xlink:href="#phone"></use>
+              </svg>
               <span>
                 Reserve by Phone:
                 <a href="tel:+84-24-6270-8888">+84 24 6270 8888</a>
               </span>
             </p>
             <p class="footer-email">
-              <svg><use xlink:href="#email"></use></svg>
+              <svg>
+                <use xlink:href="#email"></use>
+              </svg>
               <span>
                 <a href="mailto:res.hanoi@ihg.com">res.hanoi@ihg.com</a>
               </span>
             </p>
           </article>
-          <nav id="footer-additional-menu" class="footer-menu"><ul></ul></nav>
+          <nav id="footer-additional-menu" class="footer-menu">
+            <ul></ul>
+          </nav>
         </div>
         <div class="footer-block col-3">
           <div>
-            <a
-              style="width: 30%; display: inline-block"
+            <a style="width: 30%; display: inline-block"
               href="https://www.ihg.com/content/us/en/customer-care/lowest-internet-rate-terms-conditions"
-              target="_blank"
-              ><img
-                class="lazy-load"
-                style="height: 50px; width: auto; margin: 20px auto"
-                data-src="../../public/assets/bpg.png"
-                width="238"
-                height="92"
-                alt="InterContinental Hanoi Westlake"
-                src="../../public/assets/bpg.png"
-                data-loaded="true"
-            /></a>
-            <a
-              href="https://www.ihg.com/intercontinental/content/gb/en/loyalty"
-              style="width: 30%; margin-left: 10%; display: inline-block"
-              target="_blank"
-              ><img
-                class="lazy-load"
-                style="height: 50px; width: auto; margin: 20px auto"
-                data-src="../../public/assets/ambassador.png"
-                width="238"
-                height="92"
-                alt="InterContinental Hanoi Westlake"
-                src="../../public/assets/ambassador.png"
-                data-loaded="true"
-            /></a>
-            <a
-              href="https://www.ihg.com/onerewards/content/gb/en/home"
-              target="_blank"
-              style="width: 60%; display: inline-block"
-              ><img
-                class="lazy-load"
-                style="height: 50px; width: auto; margin: 20px auto"
-                data-src="../../public/assets/ihglogo.png"
-                width="238"
-                height="92"
-                alt="InterContinental Hanoi Westlake"
-                src="../../public/assets/ihglogo.png"
-                data-loaded="true"
-            /></a>
+              target="_blank"><img class="lazy-load" style="height: 50px; width: auto; margin: 20px auto"
+                data-src="../../public/assets/bpg.png" width="238" height="92" alt="InterContinental Hanoi Westlake"
+                src="../../public/assets/bpg.png" data-loaded="true" /></a>
+            <a href="https://www.ihg.com/intercontinental/content/gb/en/loyalty"
+              style="width: 30%; margin-left: 10%; display: inline-block" target="_blank"><img class="lazy-load"
+                style="height: 50px; width: auto; margin: 20px auto" data-src="../../public/assets/ambassador.png"
+                width="238" height="92" alt="InterContinental Hanoi Westlake" src="../../public/assets/ambassador.png"
+                data-loaded="true" /></a>
+            <a href="https://www.ihg.com/onerewards/content/gb/en/home" target="_blank"
+              style="width: 60%; display: inline-block"><img class="lazy-load"
+                style="height: 50px; width: auto; margin: 20px auto" data-src="../../public/assets/ihglogo.png"
+                width="238" height="92" alt="InterContinental Hanoi Westlake" src="../../public/assets/ihglogo.png"
+                data-loaded="true" /></a>
           </div>
           <div class="footer-phone">
             <p style="font-size: calc(0.44118vw + 14.58824px)">
               Book Online or Call
             </p>
-            <div
-              style="
+            <div style="
                 display: flex;
                 flex-direction: row;
                 align-content: center;
                 margin: auto;
                 flex-wrap: wrap;
                 margin-bottom: 25px;
-              "
-            >
+              ">
               <span> <a href="tel:+1-888-424-6835">+1 888 424 6835</a> </span>
             </div>
           </div>
@@ -2240,20 +1978,27 @@
       <div class="center-column">
         <div id="footer-logos-small">
           <a href="https://www.ihg.com/onerewards" target="_blank">
-            <img
-              class="lazy-load"
-              data-src="../../public/assets/footer-logos.png"
-              width="1260"
-              height="268"
-              alt="Footer Logos"
-              src="../../public/assets/footer-logos.png"
-              data-loaded="true"
-            />
+            <img class="lazy-load" data-src="../../public/assets/footer-logos.png" width="1260" height="268"
+              alt="Footer Logos" src="../../public/assets/footer-logos.png" data-loaded="true" />
           </a>
         </div>
       </div>
     </div>
   </footer>
+
+  <div class="wrapper open" v-if="isShowDialog" style="z-index: 100;">
+    <div class="overlay"></div>
+    <div class="dialog" role="dialog" aria-labelledby="title" aria-describedby="content">
+      <button class="close" @click="closeDialog">✖️</button>
+      <h1 style="text-align: center; font-size: 36px; font-weight: 700;">Thông báo</h1>
+      <div class="content" style="text-align: center;">
+        <p>Bạn chưa đăng nhập vào hệ thống</p>
+      </div>
+      <div style="text-align: end;">
+        <button @click="handleRegister">Đăng nhập</button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -2266,6 +2011,8 @@ import { useUserStore } from '@/stores/user'
 const useUser = useUserStore();
 
 const user = ref<any>({})
+
+const isShowDialog = ref<boolean>(false);
 
 onBeforeMount(() => {
   user.value = useUser.user;
@@ -2288,13 +2035,22 @@ const handleShowBooking = () => {
   }
 };
 
+const closeDialog = () => {
+  isShowDialog.value = false;
+}
+
 const handleShowList = () => {
+  if (!user) {
+    isShowDialog.value = true;
+    return;
+  }
   router.push({ name: "list" });
 }
+
 const useDates = useDatesStore();
 const selectCheckin = () => {
   console.log(checkin.value)
-  
+
   useDates.getCheckIn(checkin.value)
 }
 
@@ -2324,7 +2080,87 @@ const getRoom = async () => {
 @import url("../css/home/main.css");
 @import url("../css/home/style.css");
 
-*{
+* {
   font-family: "ITC New Baskerville"
+}
+
+.dialog {
+  background: #ffffff;
+  max-width: 600px;
+  padding: 1rem;
+  position: fixed;
+  /* max-height: 200px; */
+  overflow: hidden;
+
+}
+
+.dialog button:not(.close) {
+  padding: 15px;
+  background-color: #b38b7a;
+  font-weight: 600;
+  color: #fff;
+  border: unset;
+  outline: unset;
+  border-radius: 8px;
+  min-width: 150px;
+  min-height: 45px;
+  cursor: pointer;
+  transition: 350ms ease-in-out;
+}
+
+.dialog button:not(.close):hover {
+  color: #fff;
+  background: #44443C;
+}
+
+.wrapper.open {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.wrapper {
+  opacity: 0;
+  transition: visibility 0s, opacity 0.25s ease-in;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+.close {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-radius: 99px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close i {
+  font-size: 20px;
+}
+
+.close:hover {
+  background-color: gainsboro;
 }
 </style>

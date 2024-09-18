@@ -69,7 +69,8 @@
       <button class="close" @click="closeDialog">✖️</button>
       <h1 id="title">Thông báo</h1>
       <div id="content" class="content">
-        <p>Tài khoản này đã tồn tại</p>
+        <p v-if="status=='Login'">Tài khoản này đã tồn tại</p>
+        <p v-if="status=='SignUp'">Tài khoản này không tồn tại</p>
       </div>
     </div>
   </div>
@@ -118,17 +119,27 @@ const status = ref<string>("SignUp")
 
 
 const handleLogin = async () => {
+
   // console.log(userData.value.username, userData.value.password) 
-  const result = await axios.post(`http://localhost:8081/hotelmaster/auth/login`, 
+  try{
+    const result: any = await axios.post(`http://localhost:8081/hotelmaster/auth/login`, 
     {
       "userName": userData.value.userName,
       "password": userData.value.password,
     }
   )
-  // console.log(result.data);
-  useUser.setUser(result.data);
-  // console.log(123123123123,useUser.user)
-  userouter.go(-1);
+        useUser.setUser(result.data);
+        userouter.go(-1);
+  
+  }
+  catch(error) {
+    console.log(123123123123)
+    isShowDialog.value = true;
+  }
+
+  // // console.log(result.data);
+  // useUser.setUser(result.data);
+  // // console.log(123123123123,useUser.user)
 }
 
 const handleSignUp = async () => {
@@ -156,7 +167,7 @@ const handleSignUp = async () => {
         router.push({name: 'home'})
       }
     }).catch(error => {
-      console.log("ahsdkjahsdkhaksdh")
+      // console.log("ahsdkjahsdkhaksdh")
       isShowDialog.value = true;
     })
     

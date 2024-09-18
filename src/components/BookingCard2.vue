@@ -312,7 +312,7 @@ const handleRegister = () => {
 }
 
 const getRoom = async (id: any) => {
-  return await axios.get(`http://localhost:8081/hotelmaster/room/${id}`);
+  return await axios.get(`http://localhost:8081/hotelmaster/room/getroomNumber/${id}`);
 }
 
 onMounted(async () => {

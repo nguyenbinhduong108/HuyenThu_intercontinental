@@ -109,7 +109,7 @@
         </div>
       </div>
 
-      <BookingCard v-for="room in rooms" :key="room.id" :id="room.id" :isShowDetail="false" :checkInDate="room.checkInDate" :checkOutDate="room.checkOutDate" @idSelect="handleViewDetails"/>
+      <BookingCard2 v-for="room in rooms" :key="room.id" :id="room.roomNumber" :isShowDetail="false" :checkInDate="room.checkInDate" :checkOutDate="room.checkOutDate" @idSelect="handleViewDetails"/>
     </div>
   </div>
 
@@ -183,6 +183,7 @@ const handleCloseForm = () => {
 }
 
 import { useRoomStore } from "@/stores/rooms";
+import BookingCard2 from '@/components/BookingCard2.vue';
 const useRoom = useRoomStore()
 
 onMounted(async () => {

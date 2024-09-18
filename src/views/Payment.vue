@@ -2,10 +2,9 @@
   <div id="box"></div>
   <header id="header">
     <div class="brandLogoNavContainer">
-      <a class="logo" href="/">
-        <img src="../../public/assets/logo-dark.svg" alt="InterContinental Hanoi Westlake Logo" width="200" height="80"
-          title="InterContinental Hanoi Westlake" class="dark-logo" />
-      </a>
+      <img src="../../public/assets/86-Photoroom (2) (1).png" alt="InterContinental Hanoi Westlake Logo" width="225"
+        height="87" title="InterContinental Hanoi Westlake" class="white-logo"
+        style="object-fit: cover; width: 70px;" />
     </div>
   </header>
 
@@ -373,6 +372,9 @@
       <div id="content" class="content" style="text-align: center;">
         <p>{{ dialogTitle }}</p>
       </div>
+      <!-- <div style="text-align: end;">
+        <button @click="handleRegister">Đăng nhập</button>
+      </div> -->
     </div>
   </div>
 </template>
@@ -383,6 +385,9 @@ import { useDatesStore } from '@/stores/dates';
 import { useBookingStore } from '@/stores/booking';
 import { usePaymentStore } from '@/stores/payment'
 import axios from "axios";
+import router from "@/router";
+import { useUserStore } from "@/stores/user";
+
 
 // const useDates = useDatesStore();
 // const useBooking = useBookingStore();
@@ -418,9 +423,27 @@ const error = ref<any>({
   phoneNumber: false,
 });
 
+const handleRegister = () => {
+  router.push({ name: "register" });
+}
+
 const infoPayment = ref<any>({})
 
+const useUser = useUserStore();
+
+const user = ref<any>({})
+
+
+onBeforeMount(() => {
+  user.value = useUser.user;
+})
+
 const handlePayment = async () => {
+  if(!user){
+    isShowDialog.value = true;
+    dialogTitle.value = "Bạn chưa đăng nhập vào hệ thống";
+    return;
+  }
   if (validateForm() == false) {
     return;
   }
