@@ -575,6 +575,8 @@ const focusoutPhoneNumber = () => {
 
 const closeDialog = () =>{
   isShowDialog.value = false;
+
+  router.push({ name: "home" });
 }
 </script>
 

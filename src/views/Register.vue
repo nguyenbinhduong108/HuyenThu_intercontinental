@@ -129,7 +129,7 @@ const handleLogin = async () => {
     }
   )
         useUser.setUser(result.data);
-        userouter.go(-1);
+        router.push({'name': "home"})
   
   }
   catch(error) {

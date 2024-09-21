@@ -1986,7 +1986,7 @@
     </div>
   </footer>
 
-  <div class="wrapper open" v-if="isShowDialog" style="z-index: 100;">
+  <div class="wrapper open" v-if="isShowDialog" style="z-index: 1000000;">
     <div class="overlay"></div>
     <div class="dialog" role="dialog" aria-labelledby="title" aria-describedby="content">
       <button class="close" @click="closeDialog">✖️</button>
@@ -2016,8 +2016,7 @@ const isShowDialog = ref<boolean>(false);
 
 onBeforeMount(() => {
   user.value = useUser.user;
-  // console.log(125371253, user.value)
-  // console.log(11111111111111,user.value);
+  console.log(125371253, user.value)
 })
 
 const checkin = ref<Date>(new Date);
@@ -2040,10 +2039,12 @@ const closeDialog = () => {
 }
 
 const handleShowList = () => {
-  if (!user) {
+  console.log(user.value)
+  if (user.value.code == undefined) {
     isShowDialog.value = true;
     return;
   }
+  console.log(isShowDialog.value)
   router.push({ name: "list" });
 }
 

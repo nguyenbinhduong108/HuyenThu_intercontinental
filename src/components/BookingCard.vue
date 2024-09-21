@@ -232,7 +232,7 @@
       </div>
     </div>
   </div>
-  <div class="wrapper open" v-if="isShowDialog" style="z-index: 100;">
+  <div class="wrapper open" v-if="isShowDialog" style="z-index: 1000000;">
     <div class="overlay"></div>
     <div class="dialog" role="dialog" aria-labelledby="title" aria-describedby="content">
       <button class="close" @click="closeDialog">✖️</button>
@@ -249,7 +249,7 @@
 
 <script setup lang="ts">
 import axios from 'axios';
-import { onMounted, ref } from 'vue';
+import { onBeforeMount, onMounted, ref } from 'vue';
 import { useUserStore } from '@/stores/user'
 import { useDatesStore } from '@/stores/dates'
 import { usePaymentStore } from '@/stores/payment'
@@ -333,42 +333,52 @@ const useUser : any = useUserStore();
 const useDate = useDatesStore();
 const usePayment = usePaymentStore();
 
+onBeforeMount(() => {
+  console.log()
+})
+
 const handleSelectWithService = () => {
 
-  if(!useUser){
+  console.log(useUser.user)
+  if(useUser.user.code == undefined){
     isShowDialog.value = true;
-    return
+    return;
   }
-  payment.value.userId = useUser.user.result.userId
-  payment.value.roomNumber = room.value.roomNumber
-  payment.value.userName = useUser.user.result.userName
-  payment.value.checkInDate = useDate.checkIn
-  payment.value.checkOutDate = useDate.checkOut
-  payment.value.totalPrice = useDate.total * (Number(props.price) + 100000)
-  payment.value.serviceId = [1]
+  else{
+    payment.value.userId = useUser.user.result.userId
+    payment.value.roomNumber = room.value.roomNumber
+    payment.value.userName = useUser.user.result.userName
+    payment.value.checkInDate = useDate.checkIn
+    payment.value.checkOutDate = useDate.checkOut
+    payment.value.totalPrice = useDate.total * (Number(props.price) + 100000)
+    payment.value.serviceId = [1]
 
-  usePayment.getInfoPayment(payment.value)
+    usePayment.getInfoPayment(payment.value)
 
-  router.push({ name: "payment" });
+    router.push({ name: "payment" });
+  }
 
 }
 
 const handleSelectNoService = () => {
-  if(!useUser){
+  if(useUser.user.code == undefined){
     isShowDialog.value = true;
-    return
+    return;
   }
-  payment.value.userId = useUser.user.result.userId
-  payment.value.roomNumber = room.value.roomNumber
-  payment.value.userName = useUser.user.result.userName
-  payment.value.checkInDate = useDate.checkIn
-  payment.value.checkOutDate = useDate.checkOut
-  payment.value.totalPrice = useDate.total * Number(props.price)
-  payment.value.serviceId = []
 
-  usePayment.getInfoPayment(payment.value)
+  else{
+    payment.value.userId = useUser.user.result.userId
+    payment.value.roomNumber = room.value.roomNumber
+    payment.value.userName = useUser.user.result.userName
+    payment.value.checkInDate = useDate.checkIn
+    payment.value.checkOutDate = useDate.checkOut
+    payment.value.totalPrice = useDate.total * Number(props.price)
+    payment.value.serviceId = []
 
-  router.push({ name: "payment" });
+    usePayment.getInfoPayment(payment.value)
+
+    router.push({ name: "payment" });
+  }
 }
 
 const validateDate = (text: string) => {
